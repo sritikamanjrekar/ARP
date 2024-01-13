@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>ARP in AR World</title>
+  <meta charset="utf-8">
+  <meta name="description" content="&lt;model-viewer&gt; template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <link type="text/css" href="./styles.css" rel="stylesheet" />
+
+  <style>
+    .connector {
+      /* Set the width of the connector element */
+      width: 18.7%;
+      /* Full width for the horizontal line */
+
+      /* Set the height of the connector line */
+      height: 4px;
+      /* Adjust the height of the connector line */
+
+      /* Set the background color of the connector line */
+      background-color: blue;
+      /* Adjust the color as needed */
+
+      /* Set the position property to absolute for precise positioning */
+      position: absolute;
+
+      /* Set the left margin to position the connector horizontally */
+      margin-left: 21%;
+      /* Adjust the left margin as needed */
+
+      /* Set the top position to separate it from the models */
+      top: 41.5%;
+      /* Adjust the top position as needed */
+
+      /* Set the z-index to 1 for layering, ensuring it appears above other elements */
+      z-index: 1;
+      /* Adjust the z-index as needed */
+    }
+
+
+
+    .connector-1 {
+      /* Set the width of the connector element */
+      width: 21.7%;
+      /* Full width for the horizontal line */
+
+      /* Set the height of the connector line */
+      height: 4px;
+      /* Adjust the height of the connector line */
+
+      /* Set the background color of the connector line */
+      background-color: green;
+      /* Adjust the color as needed */
+
+      /* Set the position property to absolute for precise positioning */
+      position: absolute;
+
+      /* Set the left margin to position the connector horizontally */
+      margin-left: 52%;
+      /* Adjust the left margin as needed */
+
+      /* Set the top position to separate it from the models */
+      top: 42.8%;
+      /* Adjust the top position as needed */
+
+      /* Set the z-index to 1 for layering, ensuring it appears above other elements */
+      z-index: 1;
+      /* Adjust the z-index as needed */
+    }
+
+    
+    .vertical-line {
+            /* Set the height of the vertical line */
+            height: 230px;
+            /* Adjust the height as needed */
+
+           
+            /* Set the left margin to position the vertical line to the left side */
+            margin-left: 48%;
+            /* Adjust the left margin as needed */
+
+            /* Set the top margin to position the vertical line up from the top */
+            margin-top: -9%;
+            /* Adjust the top margin as needed */
+
+            /* Set the position property to absolute for precise positioning */
+            position: absolute;
+            /* Adjust the margin as needed */
+
+            /* Change the color of the dashed border */
+            border-color: red;
+            /* Adjust the border color as needed */
+
+            /* Define the border style as dashed */
+            border-style: solid;
+        }
+  </style>
+</head>
+
+<body>
+
+  <!-- Inserts a line break (not visible on the page) -->
+  <!-- Start of HTML Document -->
+
+  <br> <!-- Line break element -->
+
+  <!-- Container div -->
+  <div>
+
+    <!-- Center-aligned content using the deprecated <center> tag -->
+    <center>
+
+      <!-- Heading element with text "File Transfer Protocols" -->
+      <h1>Address Resolution Protocol (ARP)</h1>
+      <!-- Heading element -->
+      <button class="btn btn-warning btn-sm" onclick="openPdfPPT()" >Explore ARP Magic</button>
+      &ensp;&ensp;<button class="btn btn-primary btn-sm" onclick="openPdfDocs()" >AR Adventure Guide</button>
+
+
+
+      <br> <!-- Line break element -->
+
+    </center>
+    <!-- End of center-aligned content -->
+
+  </div>
+  <!-- End of container div -->
+
+  <hr> <!-- Horizontal rule element -->
+
+  <div class="model-viewer-container">
+
+    <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
+      shadow-intensity="1">
+
+      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
+        data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
+        data-normal="0m 0.4745439042365091m 0.8802318347753455m" data-visibility-attribute="visible"
+        data-bs-toggle="modal" data-bs-target="#PC-1IpAddress">
+        <div class="HotspotAnnotation">PC-1</div>
+      </button>
+    </model-viewer>
+
+  </div>
+
+  <div class="model-viewer-container">
+
+    <model-viewer src="switch.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
+      shadow-intensity="1">
+      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-1"
+        data-position="-17.82355475016235m 6.123874902725213m -167.32013377219792m" data-normal="0m 1m 0m"
+        data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#SwictchIpAddress">
+        <div class="HotspotAnnotation">Switch</div>
+      </button>
+
+    </model-viewer>
+
+  </div>
+
+  <div class="connector-1"></div>
+  
+
+  <div class="model-viewer-container">
+    <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
+      shadow-intensity="1">
+
+      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
+        data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
+        data-normal="0m 0.4745439042365091m 0.8802318347753455m" data-visibility-attribute="visible"
+        data-bs-toggle="modal" data-bs-target="#PC-2IpAddress">
+        <div class="HotspotAnnotation">PC-2</div>
+      </button>
+    </model-viewer>
+
+  </div>
+
+  <div class="connector"></div>
+
+
+  
+  <div class="vertical-line"></div>
+
+  <div class="model-viewer-container">
+
+    <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
+      shadow-intensity="1" style="margin-top: 3%;margin-left: 110%;">
+
+      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
+        data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
+        data-normal="0m 0.4745439042365091m 0.8802318347753455m" data-visibility-attribute="visible"
+        data-bs-toggle="modal" data-bs-target="#PC-3IpAddress">
+        <div class="HotspotAnnotation">PC-3</div>
+      </button>
+    </model-viewer>
+  </div>
+
+
+  
+    <!-- Modal -->
+    <div class="modal fade" id="PC-1IpAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-1</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                  IP Address > 192.168.11.1
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Okay</button>
+                  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="modal fade" id="PC-2IpAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-2</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                IP Address > 192.168.11.2
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Okay</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="PC-3IpAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-3</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+              IP Address > 192.168.11.3
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Okay</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+  <!-- Loads <model-viewer> for browsers: -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.2.0/model-viewer.min.js"></script>
+
+  <!-- Includes a JavaScript module for 3D model viewing -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <!-- Includes the Bootstrap JavaScript library from a CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
