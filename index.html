@@ -29,11 +29,11 @@
       position: absolute;
 
       /* Set the left margin to position the connector horizontally */
-      margin-left: 21%;
+      margin-left: 21.4%;
       /* Adjust the left margin as needed */
 
       /* Set the top position to separate it from the models */
-      top: 41.5%;
+      top: 42.5%;
       /* Adjust the top position as needed */
 
       /* Set the z-index to 1 for layering, ensuring it appears above other elements */
@@ -45,7 +45,7 @@
 
     .connector-1 {
       /* Set the width of the connector element */
-      width: 21.7%;
+      width: 21.1%;
       /* Full width for the horizontal line */
 
       /* Set the height of the connector line */
@@ -60,11 +60,11 @@
       position: absolute;
 
       /* Set the left margin to position the connector horizontally */
-      margin-left: 52%;
+      margin-left: 52.1%;
       /* Adjust the left margin as needed */
 
       /* Set the top position to separate it from the models */
-      top: 42.8%;
+      top: 43.9%;
       /* Adjust the top position as needed */
 
       /* Set the z-index to 1 for layering, ensuring it appears above other elements */
@@ -72,32 +72,79 @@
       /* Adjust the z-index as needed */
     }
 
-    
+
     .vertical-line {
-            /* Set the height of the vertical line */
-            height: 230px;
-            /* Adjust the height as needed */
+      /* Set the height of the vertical line */
+      height: 255px;
+      /* Adjust the height as needed */
 
-           
-            /* Set the left margin to position the vertical line to the left side */
-            margin-left: 48%;
-            /* Adjust the left margin as needed */
 
-            /* Set the top margin to position the vertical line up from the top */
-            margin-top: -9%;
-            /* Adjust the top margin as needed */
+      /* Set the left margin to position the vertical line to the left side */
+      margin-left: 48%;
+      /* Adjust the left margin as needed */
 
-            /* Set the position property to absolute for precise positioning */
-            position: absolute;
-            /* Adjust the margin as needed */
+      /* Set the top margin to position the vertical line up from the top */
+      margin-top: -10.2%;
+      /* Adjust the top margin as needed */
 
-            /* Change the color of the dashed border */
-            border-color: red;
-            /* Adjust the border color as needed */
+      /* Set the position property to absolute for precise positioning */
+      position: absolute;
+      /* Adjust the margin as needed */
 
-            /* Define the border style as dashed */
-            border-style: solid;
-        }
+      /* Change the color of the dashed border */
+      border-color: red;
+      /* Adjust the border color as needed */
+
+      /* Define the border style as dashed */
+      border-style: solid;
+    }
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .btn-group {
+      margin-top: 10px;
+    }
+
+    .model-viewer-container {
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .connector,
+    .connector-1,
+    .vertical-line {
+      position: absolute;
+      z-index: 1;
+    }
+
+
+
+
+
+
+
+    #modelContainer {
+      display: flex;
+      position: relative;
+      margin-top: -70%;
+      /* Adjust as needed */
+      margin-left: 28%;
+      /* Adjust as needed */
+    }
+
+    #model1 {
+      width: 10%;
+      display: flex;
+    }
   </style>
 </head>
 
@@ -117,8 +164,8 @@
       <!-- Heading element with text "File Transfer Protocols" -->
       <h1>Address Resolution Protocol (ARP)</h1>
       <!-- Heading element -->
-      <button class="btn btn-warning btn-sm" onclick="openPdfPPT()" >Explore ARP Magic</button>
-      &ensp;&ensp;<button class="btn btn-primary btn-sm" onclick="openPdfDocs()" >AR Adventure Guide</button>
+      <button class="btn btn-warning btn-sm" onclick="openPdfPPT()">Explore ARP Magic</button>
+      &ensp;&ensp;<button class="btn btn-primary btn-sm" onclick="openPdfDocs()">AR Adventure Guide</button>
 
 
 
@@ -132,41 +179,71 @@
 
   <hr> <!-- Horizontal rule element -->
 
+
   <div class="model-viewer-container">
+    <div id="modelContainer">
+      <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+        tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model1"
+        style="width: 30%;z-index: 1;">
+        <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+          data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
+          data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Packet</div>
+        </button>
+      </model-viewer>
 
-    <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
-      shadow-intensity="1">
 
-      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
-        data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
-        data-normal="0m 0.4745439042365091m 0.8802318347753455m" data-visibility-attribute="visible"
-        data-bs-toggle="modal" data-bs-target="#PC-1IpAddress">
-        <div class="HotspotAnnotation">PC-1</div>
-      </button>
-    </model-viewer>
 
+
+      <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+        poster="poster.webp" shadow-intensity="1" style="margin-left: -49%;margin-top: -13%; display: flex;">
+
+        <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
+          data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
+          data-normal="0m 0.4745439042365091m 0.8802318347753455m" data-visibility-attribute="visible"
+          data-bs-toggle="modal" data-bs-target="#PC-1IpAddress">
+          <div class="HotspotAnnotation">PC-1</div>
+        </button>
+      </model-viewer>
+
+
+    </div>
   </div>
 
+
+
+  <div class="connector-1" data-bs-toggle="modal" data-bs-target="#Connector"></div>
+
   <div class="model-viewer-container">
 
+
+
     <model-viewer src="switch.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
-      shadow-intensity="1">
+      shadow-intensity="1" >
       <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-1"
         data-position="-17.82355475016235m 6.123874902725213m -167.32013377219792m" data-normal="0m 1m 0m"
-        data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#SwictchIpAddress">
+        data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#Switch">
         <div class="HotspotAnnotation">Switch</div>
       </button>
 
+
     </model-viewer>
 
   </div>
 
-  <div class="connector-1"></div>
-  
+
+
+
+
+
+
 
   <div class="model-viewer-container">
+
+
+
     <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
-      shadow-intensity="1">
+      shadow-intensity="1" style="margin-top: -70%;">
 
       <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
         data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
@@ -176,18 +253,61 @@
       </button>
     </model-viewer>
 
+
+
+
   </div>
 
-  <div class="connector"></div>
+
+  <div class="connector" data-bs-toggle="modal" data-bs-target="#Connector"></div>
 
 
-  
-  <div class="vertical-line"></div>
+
+  <div class="vertical-line" data-bs-toggle="modal" data-bs-target="#Connector"></div>
+
+  <div style="width: fit-content;margin-left: 70%;">
+    <table id="PC2Table" class="table table-hover table-striped border-success table-sm table-bordered">
+      <caption>PC-2 ARP Table</caption>
+      <thead class="table-success">
+        <tr>
+
+          <th scope="col">IP Address</th>
+          <th scope="col">Hardware Address</th>
+          <th scope="col">Interface</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr>
+
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td colspan="3"><button type="button" class="btn btn-sm btn-outline-success" data-bs-toggle="modal"
+              data-bs-target="#pc2CMD" onclick="getUserInputCmdPc2()">Open Command Prompt</button>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
 
   <div class="model-viewer-container">
 
     <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
-      shadow-intensity="1" style="margin-top: 3%;margin-left: 110%;">
+      shadow-intensity="1" style="margin-top: -30%;margin-left: 110%;">
 
       <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
         data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
@@ -199,65 +319,343 @@
   </div>
 
 
-  
-    <!-- Modal -->
-    <div class="modal fade" id="PC-1IpAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-1</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-              </div>
-              <div class="modal-body">
-                  IP Address > 192.168.11.1
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Okay</button>
-                  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-              </div>
-          </div>
+
+
+  <div style="width: fit-content;margin-left: 5%;margin-top: -25%;">
+    <table id="PC1Table" class="table table-hover table-striped border-primary table-sm table-bordered">
+      <caption>PC-1 ARP Table</caption>
+      <thead class="table-primary">
+        <tr>
+
+          <th scope="col">IP Address</th>
+          <th scope="col">Hardware Address</th>
+          <th scope="col">Interface</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr>
+
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td colspan="3"><button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+              data-bs-target="#pc1Cmd" onclick="getUserInputCmdPc1()">Open Command Prompt</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <div style="width: fit-content;margin-left: 40%;margin-top: 17%;">
+    <table id="PC3Table" class="table table-hover table-striped border-danger table-sm table-bordered">
+      <caption>PC-3 ARP Table</caption>
+      <thead class="table-danger">
+        <tr>
+
+          <th scope="col">IP Address</th>
+          <th scope="col">Hardware Address</th>
+          <th scope="col">Interface</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr>
+
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td colspan="3"><button type="button" onclick="getUserInputCmdPc3()" class="btn btn-sm btn-outline-danger"
+              data-bs-toggle="modal" data-bs-target="#pc3Cmd">Open Command Prompt</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="PC-1IpAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-1</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          IP Address > 192.168.11.1
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Okay</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
       </div>
+    </div>
   </div>
 
 
   <div class="modal fade" id="PC-2IpAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-2</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                IP Address > 192.168.11.2
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Okay</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="PC-3IpAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
       <div class="modal-content">
-          <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-3</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-              IP Address > 192.168.11.3
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Okay</button>
-              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-2</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          IP Address > 192.168.11.2
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Okay</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
       </div>
+    </div>
   </div>
-</div>
+
+  <div class="modal fade" id="PC-3IpAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-3</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          IP Address > 192.168.11.3
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Okay</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="Connector" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Fast Ethernet 0/1 RS-232 Wire</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+
+          <img src="rs232.jpg" alt="RS 232">
+          <img src="pinrs232.jpg" alt="Pin number of RS-232">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Okay</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="Switch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Switch 2950-24</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+
+          <img src="switch295-24.PNG" alt="switch2950-24">
+          <img src="switch.jpg" alt="switch2950-24">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Okay</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+    function getUserInputCmdPc3() {
+      // Check if the table has data
+      var tableRows = document.querySelectorAll("PC3Table tbody tr");
+
+      // Prompt user for input
+      var userInput = prompt("PC-3 Command Prompt\nSome ARP Commands are 'arp -a', 'ping ip_address'\nEnter something:");
+
+      // Check if user clicked "OK" and entered some text
+      if (userInput !== null && userInput.trim() !== "") {
+
+        // Show alert with user input
+        //alert("You entered: " + userInput);
+
+        // Show the model by setting display to block
+        var modelViewer = document.getElementById('model1');
+        modelViewer.style.display = 'block';
+
+        // Add a class to start the animation
+        modelViewer.classList.add('moveRight');
+
+        // Remove the class after the animation is completed (adjust the time accordingly)
+        setTimeout(function () {
+          modelViewer.classList.remove('moveRight');
+        }, 10000); // 10 seconds, adjust as needed
+
+
+      } if (userInput == 'arp -a') {
+
+        // Check if there are any rows with non-empty cells
+        var hasData = Array.from(tableRows).some(row => {
+          var cells = row.querySelectorAll("td");
+          return Array.from(cells).some(cell => cell.textContent.trim() !== "");
+        });
+
+        if (!hasData) {
+          // Alert the user that there are no ARP entries
+          alert("No ARP Entries Found.");
+          return;
+        }
+
+      }
+      else {
+        // Show alert if the user canceled or entered empty text
+        alert("You canceled or entered empty text.");
+      }
+    }
+
+
+    function getUserInputCmdPc2() {
+      // Check if the table has data
+      var tableRows = document.querySelectorAll("PC2Table tbody tr");
+
+      // Prompt user for input
+      var userInput = prompt("PC-2 Command Prompt\nSome ARP Commands are 'arp -a', 'ping ip_address'\nEnter something:");
+
+      // Check if user clicked "OK" and entered some text
+      if (userInput !== null && userInput.trim() !== "") {
+
+        // Show alert with user input
+        //alert("You entered: " + userInput);
+
+        // Show the model by setting display to block
+        var modelViewer = document.getElementById('model1');
+        modelViewer.style.display = 'block';
+
+        // Add a class to start the animation
+        modelViewer.classList.add('moveRight');
+
+        // Remove the class after the animation is completed (adjust the time accordingly)
+        setTimeout(function () {
+          modelViewer.classList.remove('moveRight');
+        }, 10000); // 10 seconds, adjust as needed
+
+
+      } if (userInput == 'arp -a') {
+
+        // Check if there are any rows with non-empty cells
+        var hasData = Array.from(tableRows).some(row => {
+          var cells = row.querySelectorAll("td");
+          return Array.from(cells).some(cell => cell.textContent.trim() !== "");
+        });
+
+        if (!hasData) {
+          // Alert the user that there are no ARP entries
+          alert("No ARP Entries Found.");
+          return;
+        }
+
+      }
+      else {
+        // Show alert if the user canceled or entered empty text
+        alert("You canceled or entered empty text.");
+      }
+    }
 
 
 
+    function getUserInputCmdPc1() {
+      // Check if the table has data
+      var tableRows = document.querySelectorAll("#PC1Table tbody tr");
+
+      console.log(tableRows.length);
+
+      // Prompt user for input
+      var userInput = prompt("PC-1 Command Prompt\nSome ARP Commands are 'arp -a', 'ping ip_address'\nEnter something:");
+
+      // Check if user clicked "OK" and entered some text
+      if (userInput !== null && userInput.trim() !== "") {
+
+        // Show alert with user input
+        //alert("You entered: " + userInput);
+
+        // Show the model by setting display to block
+        var modelViewer = document.getElementById('model1');
+        modelViewer.style.display = 'block';
+
+        // Add a class to start the animation
+        modelViewer.classList.add('moveRight');
+
+        // Remove the class after the animation is completed (adjust the time accordingly)
+        setTimeout(function () {
+          modelViewer.classList.remove('moveRight');
+        }, 10000); // 10 seconds, adjust as needed
+
+
+      } if (userInput == 'arp -a') {
+
+        // Check if there are any rows with non-empty cells
+        var hasData = Array.from(tableRows).some(row => {
+          var cells = row.querySelectorAll("td");
+          return Array.from(cells).some(cell => cell.innerHTML.trim() !== "");
+        });
+
+        console.log("Has Data: ", hasData);
+
+        if (!hasData) {
+          // Alert the user that there are no ARP entries
+          alert("No ARP Entries Found.");
+          return;
+        }
+
+      }
+      else {
+        // Show alert if the user canceled or entered empty text
+        alert("You canceled or entered empty text.");
+      }
+    }
+
+
+
+
+
+
+    function openPdfPPT() {
+      window.open('openPdfPPT.html', '_blank');
+    }
+
+    function openPdfDocs() {
+      window.open('openPdfDocs.html', '_blank');
+    }
+
+  </script>
 
 
   <!-- Loads <model-viewer> for browsers: -->

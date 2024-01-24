@@ -1,0 +1,1447 @@
+<html>
+
+<head>
+    <title>Web AR</title> <!-- Sets the title of the web page to "Web AR" -->
+    <meta charset="utf-8"> <!-- Defines the character encoding for the document as UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Specifies compatibility settings for Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <style>
+        .vertical-line {
+            /* Define the border style as dashed */
+            border-style: dashed;
+
+            /* Set the border color to red */
+            border-color: red;
+
+            /* Change the color as needed */
+
+            /* Set the height of the vertical line */
+            height: 70px;
+            /* Adjust the height as needed */
+
+            /* Set the margins for positioning */
+            margin: 0 20px;
+            /* Top and bottom margins are 0, left and right margins are 20px */
+
+            /* Set the left margin to position the vertical line to the right side */
+            margin-left: 85%;
+            /* Adjust the left margin as needed */
+
+            /* Set the top margin to position the vertical line down from the top */
+            margin-top: 6%;
+            /* Adjust the top margin as needed */
+
+            /* Set the position property to absolute for precise positioning */
+            position: absolute;
+            /* Adjust the margin as needed */
+        }
+
+
+        .vertical-line-browser {
+            /* Set the height of the vertical line */
+            height: 115px;
+            /* Adjust the height as needed */
+
+            /* Set the margins for positioning */
+            margin: 0 20px;
+            /* Top and bottom margins are 0, left and right margins are 20px */
+
+            /* Set the left margin to position the vertical line to the left side */
+            margin-left: 15%;
+            /* Adjust the left margin as needed */
+
+            /* Set the top margin to position the vertical line up from the top */
+            margin-top: -5%;
+            /* Adjust the top margin as needed */
+
+            /* Set the position property to absolute for precise positioning */
+            position: absolute;
+            /* Adjust the margin as needed */
+
+            /* Change the color of the dashed border */
+            border-color: green;
+            /* Adjust the border color as needed */
+
+            /* Define the border style as dashed */
+            border-style: dashed;
+
+            z-index: -1;
+        }
+
+
+        /* Add CSS for the containers holding the model-viewer elements */
+
+        .model-viewer-container {
+            /* Set the display property to inline-block for inline layout with block-level box properties */
+            display: inline-block;
+
+            /* Set the width of the container */
+            width: 30%;
+            /* Adjust the width as needed */
+
+            /* Add margin to create spacing around the container */
+            margin: 10px;
+            /* Add spacing between the containers */
+        }
+
+
+        /* Style the model-viewer elements if necessary */
+
+        model-viewer {
+            /* Set the width of the model-viewer element to 100% */
+            width: 100%;
+
+            /* Set the height of the model-viewer element */
+            height: 300px;
+            /* Adjust the height as needed */
+        }
+
+
+
+        /* Style for the connector element */
+
+        .connector {
+            /* Set the width of the connector element */
+            width: 22.5%;
+            /* Full width for the horizontal line */
+
+            /* Set the height of the connector line */
+            height: 3px;
+            /* Adjust the height of the connector line */
+
+            /* Set the background color of the connector line */
+            background-color: blue;
+            /* Adjust the color as needed */
+
+            /* Set the position property to absolute for precise positioning */
+            position: absolute;
+
+            /* Set the left margin to position the connector horizontally */
+            margin-left: 21%;
+            /* Adjust the left margin as needed */
+
+            /* Set the top position to separate it from the models */
+            top: 124px;
+            /* Adjust the top position as needed */
+
+            /* Set the z-index to 1 for layering, ensuring it appears above other elements */
+            z-index: 1;
+            /* Adjust the z-index as needed */
+        }
+
+
+        /* Style for the first connector element */
+
+        .connector-1 {
+            /* Set the width of the connector element */
+            width: 35.6%;
+            /* Full width for the horizontal line */
+
+            /* Set the height of the connector line */
+            height: 3px;
+            /* Adjust the height of the connector line */
+
+            /* Set the background color of the connector line */
+            background-color: yellow;
+            /* Adjust the color as needed */
+
+            /* Set the position property to absolute for precise positioning */
+            position: absolute;
+
+            /* Set the left margin to position the connector horizontally */
+            margin-left: 46.3%;
+            /* Adjust the left margin as needed */
+
+            /* Set the top position to separate it from the models */
+            top: 124px;
+            /* Adjust the top position as needed */
+
+            /* Set the z-index to 1 for layering, ensuring it appears above other elements */
+            z-index: 1;
+            /* Adjust the z-index as needed */
+        }
+
+
+
+        /* CSS for the slanted line container */
+
+        .slanted-line-container {
+            /* Set the width of the slanted line container */
+            width: 49%;
+            /* Adjust the width of the line */
+
+            /* Set the height of the slanted line container */
+            height: 2px;
+            /* Adjust the height as needed */
+
+            /* Apply a linear gradient background to create the slanted line effect */
+            background: linear-gradient(135deg, transparent 20px, red 20px);
+            /* Adjust the gradient angle and colors as needed */
+
+            /* Rotate the slanted line to be vertical */
+            transform: rotate(929deg);
+            /* Adjust the rotation angle as needed */
+
+            /* Set the margin for positioning the slanted line container */
+            margin: 35px 640px;
+            /* Adjust the margin as needed */
+
+            /* Set the bottom margin to create space below the slanted line container */
+            margin-bottom: 5%;
+            /* Adjust the bottom margin as needed */
+        }
+
+
+        /* Style for the element with ID 'getData' */
+
+        #getData {
+            /* Set the width of the element */
+            width: 250px;
+
+            /* Set the height of the element */
+            height: 200px;
+
+            /* Add padding inside the element */
+            padding: 10px;
+
+            /* Add a border with 1px width and solid black color */
+            border: 1px solid #000000;
+        }
+
+
+        /* Style for elements with class 'row1' */
+
+        .row1 {
+            /* Set the display property to flex for flexbox layout */
+            display: flex;
+        }
+
+
+        /* Define a keyframe animation named 'moveAndSlant' */
+
+        @keyframes moveAndSlant {
+
+            /* Keyframe at 0% */
+            0% {
+                /* Initial state: no translation or rotation */
+                transform: translateY(0) rotate(0deg);
+            }
+
+            /* Keyframe at 25% */
+            25% {
+                /* Move upward by 50px without rotation */
+                transform: translateY(-50px) rotate(0deg);
+            }
+
+            /* Keyframe at 50% */
+            50% {
+                /* Move upward by 450px and left by 600px without rotation */
+                transform: translateY(-450px) translateX(-600px) rotate(0deg);
+            }
+
+            /* Keyframe at 100% */
+            100% {
+                /* Move upward by 450px and reset horizontal translation without rotation */
+                transform: translateY(-450px) translateX(0) rotate(0deg);
+
+                /* Set the display property to none, hiding the element */
+                display: none;
+            }
+        }
+
+
+        /* Apply the 'moveAndSlant' animation to the element with ID 'sendFileModel' */
+
+        #sendFileModel {
+            /* Use the 'moveAndSlant' animation with a duration of 10s, easing in and out, forwards fill mode, and a delay of 3s */
+            animation: moveAndSlant 10s ease-in-out forwards 3;
+        }
+
+
+        /* Define a keyframe animation named 'moveLeftAndDownAnimation' */
+
+        @keyframes moveLeftAndDownAnimation {
+
+            /* Keyframe at 0% */
+            0% {
+                /* Initial state: no translation in the X and Y axes */
+                transform: translateX(0) translateY(0);
+            }
+
+            /* Keyframe at 50% */
+            50% {
+                /* Move left by 335% of the element's width without vertical translation */
+                transform: translateX(-335%) translateY(0);
+            }
+
+            /* Keyframe at 100% */
+            100% {
+                /* Move left by 335% of the element's width and down by 500% of the element's height */
+                transform: translateX(-335%) translateY(500%);
+            }
+        }
+
+
+        /* Apply the 'moveLeftAndDownAnimation' animation to the element with ID 'receiveFileModel' */
+
+        #receiveFileModel {
+            /* Use the 'moveLeftAndDownAnimation' animation with a duration of 10s, easing in and out, and a delay of 3s */
+            animation: moveLeftAndDownAnimation 10s ease-in-out 3;
+            /* Adjust duration and easing as needed */
+        }
+
+
+        /* Apply basic styles to the button with the class 'transparent-button' */
+
+        .transparent-button {
+            /* Set the background color of the button to transparent */
+            background-color: white;
+
+            /* Set the text color of the button */
+            color: rgb(89, 255, 0);
+            /* Set the text color */
+
+            /* Add a border to the button with a 2px width and the specified color */
+            border: 2px solid rgb(89, 255, 0);
+            /* Set the border color */
+
+            /* Set the cursor to a pointer to indicate interactivity */
+            cursor: pointer;
+
+            /* Add a smooth transition effect for background color and text color changes */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* Add a smooth transition effect */
+
+            /* Apply the 'rainbow' animation with a duration of 3s and infinite repeat */
+            animation: rainbow 3s infinite;
+            /* Add rainbow animation */
+            /* Add rainbow animation */
+        }
+
+
+        /* Define a keyframe animation named 'rainbow' */
+
+        @keyframes rainbow {
+
+            /* Keyframe at 0% */
+            0% {
+                /* Set the color and border color to red */
+                color: red;
+                border-color: red;
+            }
+
+            /* Keyframe at 16.666% */
+            16.666% {
+                /* Set the color and border color to orange */
+                color: orange;
+                border-color: orange;
+            }
+
+            /* Keyframe at 33.333% */
+            33.333% {
+                /* Set the color and border color to yellow */
+                color: yellow;
+                border-color: yellow;
+            }
+
+            /* Keyframe at 50% */
+            50% {
+                /* Set the color and border color to green */
+                color: green;
+                border-color: green;
+            }
+
+            /* Keyframe at 66.666% */
+            66.666% {
+                /* Set the color and border color to blue */
+                color: blue;
+                border-color: blue;
+            }
+
+            /* Keyframe at 83.333% */
+            83.333% {
+                /* Set the color and border color to indigo */
+                color: indigo;
+                border-color: indigo;
+            }
+
+            /* Keyframe at 100% */
+            100% {
+                /* Set the color and border color to violet */
+                color: violet;
+                border-color: violet;
+            }
+        }
+
+        /* Change the background color and text color on hover for elements with the class 'transparent-button' */
+
+        .transparent-button:hover {
+            /* Set the background color to white on hover */
+            background-color: #ffffff;
+            /* Set the background color on hover */
+
+            /* Set the text color to black on hover */
+            color: #000000;
+            /* Set the text color on hover */
+        }
+
+
+
+
+
+        /* Styling for the modal */
+        .model {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 10px;
+            /* Rounded corners */
+            max-width: 400px;
+            /* Set a maximum width if needed */
+        }
+
+        /* Styling for the overlay background */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+
+    <script>
+        // Function to allow dropping items into a specified area
+        function allowDrop(even) {
+            // Prevent the default behavior to enable drop
+            even.preventDefault();
+        }
+
+        // Function to initiate drag when an item is dragged
+        function drag(even) {
+            // Set the data to be transferred during drag (in this case, the element's ID)
+            even.dataTransfer.setData("text", even.target.id);
+        }
+
+        // Function to handle the drop event
+        function drop(even) {            // Prevent the default behavior to enable drop
+            even.preventDefault();
+
+            // Retrieve the data transferred during drag (in this case, the element's ID)
+            var fetchData = even.dataTransfer.getData("text");
+
+            // Append the dragged element to the drop area
+            even.target.appendChild(document.getElementById(fetchData));
+
+            // Get the drop area element
+            var dropArea = document.getElementById(fetchData);
+
+            // Check if the drop area already has child elements
+            if (dropArea.hasChildNodes()) {
+                // Log a message if something is not in the drop area
+                console.log("Something is not there in the drop area");
+
+            } else {
+                // Log a message if something is in the drop area
+                console.log("Something is already in the drop area");
+                startUploadingFile();;
+            }
+        }
+
+    </script>
+
+    <!-- Include the model-viewer JavaScript module -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Inserts a line break (not visible on the page) -->
+    <!-- Start of HTML Document -->
+
+    <br> <!-- Line break element -->
+
+    <!-- Container div -->
+    <div>
+
+        <!-- Center-aligned content using the deprecated <center> tag -->
+        <center>
+
+            <!-- Heading element with text "File Transfer Protocols" -->
+            <h1>File Transfer Protocol (FTP)</h1>
+            <!-- Heading element -->
+
+            <button class="btn btn-warning btn-sm" onclick="openPdfPPT()" >Explore FTP Magic</button>
+            &ensp;&ensp;<button class="btn btn-primary btn-sm" onclick="openPdfDocs()" >AR Adventure Guide</button>
+
+
+
+            <br> <!-- Line break element -->
+
+        </center>
+        <!-- End of center-aligned content -->
+
+    </div>
+    <!-- End of container div -->
+
+    <hr> <!-- Horizontal rule element -->
+    <!-- End of HTML Document -->
+
+    <!-- <div class="model-viewer-container">
+    </div> -->
+
+
+
+    <!-- Modal HTML -->
+    <div class="model" id="customAlert">
+        <p>Let's Start Transferring File using FTP (File Transfer Protocol) in AR World!!<br><br>1. To obtain the IP
+            addresses of network devices, please click on their respective names.
+            <br> <img src="label.PNG" alt="Know IP Address" style="width: 100%; height: 100%;">
+
+            <br><br>2. Click on <span style="color: red;">FileZilla FTP Application Logo</span>
+        </p>
+        <img src="filezilla-logo.jpg" alt="FileZilla Logo" style="width: 50%; height: 50%;">
+
+
+        <p> to upload file on FTP Server by using FTP Server IP Address.</p>
+        <button class="btn btn-outline-warning" onclick="closeModal()">Okay</button>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeModal()"></div>
+
+
+    <!-- Container for the first model-viewer -->
+    <!-- Container for the model viewer element with class 'model-viewer-container' -->
+    <div class="model-viewer-container">
+
+        <!-- Model viewer element for displaying 3D content -->
+        <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+            poster="poster.webp" shadow-intensity="1" id="FtpClientLaptop">
+
+            <!-- onclick="alert('IP Address > 192.168.0.3')"  -->
+            <!-- Button element with class 'Hotspot transparent-button' placed in a specific slot -->
+            <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
+                data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
+                data-normal="0m 0.4745439042365091m 0.8802318347753455m" data-visibility-attribute="visible"
+                data-bs-toggle="modal" data-bs-target="#laptop3IpAddress">
+                <!-- JavaScript function to display an alert on click -->
+
+                <!-- Div with class 'HotspotAnnotation' containing annotation text -->
+                <div class="HotspotAnnotation">Laptop 2 - FTP Client</div>
+            </button>
+            <!-- End of button element -->
+
+        </model-viewer>
+        <!-- End of model viewer element -->
+
+    </div>
+    <!-- End of container div -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="laptop3IpAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop - FTP Client</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    IP Address > 192.168.0.3
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Okay</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="vertical-line-browser"></div>
+
+
+    <!-- Browser Image Input -->
+    <input type="image" src="browser.png"
+        style="width: 30%; margin-left: -30%; margin-top: 24%; height: 30%; position: absolute ;"
+        onclick="handleBrowserImageClick()" />
+    <!-- Input element of type image with browser image, styling, and click event handler -->
+
+    <!-- File Download Link -->
+    <a href="#" id="downloadLink" style="display: none; margin-left: -30%; margin-top: 40%; position: absolute ;"
+        class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+        onclick="receiveFileAnimate()">Download file</a>
+    <!-- Anchor element for file download link with styling and click event handler -->
+
+    <!-- Connector Divs -->
+    <div class="connector" style="margin-top: 190px;"></div>
+    <div class="connector-1" style="margin-top: 190px;"></div>
+    <!-- Div elements for connectors with styling -->
+
+
+
+
+    <!-- Model viewer element for displaying 3D content -->
+    <!-- <model-viewer
+        src="router 2.glb"  Source file for the 3D model 
+        ar ar-modes="webxr scene-viewer quick-look"  Augmented Reality (AR) modes supported 
+        camera-controls  Enables user control over the camera 
+        poster="poster.webp"  Poster image displayed before the model loads 
+        shadow-intensity="1"  Intensity of shadows cast by the model 
+        style="top: -40px;"> Inline styling for top positioning -->
+
+    <!-- Similar containers for other model-viewer elements -->
+    <div class="model-viewer-container">
+        <model-viewer src="router 2.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+            poster="poster.webp" shadow-intensity="1" style="top: -40px;">
+            <button class="Hotspot" style="border-radius: 100%;background-color:rgb(89, 255, 0) ;" slot="hotspot-1"
+                data-position="37.69583283935017m 4.179193256400421m -51.57656243125259m"
+                data-normal="0.006317747746330481m 0.8348694792995796m -0.5504116991829504m"
+                data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#Router2Led">
+                <div class="HotspotAnnotation" style="font-size:8px;"><b>1</b></div>
+            </button>
+
+            <button class="Hotspot " style="border-radius: 100%;background-color:rgb(89, 255, 0) ;" slot="hotspot-1"
+                data-position="-0.3749784954434645m 32.58163092195337m -10.35857489224265m"
+                data-normal="0.0017078448797659893m 0.8294415367891209m -0.5585909239459302m"
+                data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#Router2IPAddress">
+                <div class="HotspotAnnotation" style="font-size:8px;"><b>2</b></div>
+            </button>
+
+            <button class="Hotspot" style="border-radius: 100%;background-color:rgb(89, 255, 0) ;" slot="hotspot-2"
+                data-position="135.16326578752825m 239.44476987204035m 104.58417854752453m"
+                data-normal="-0.3023598593036365m 0.08772456858763628m 0.9491485213326724m"
+                data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#Router2Antennae">
+                <div class="HotspotAnnotation" style="font-size:8px;"><b>3</b></div>
+            </button>
+
+            <button class="Hotspot" style="border-radius: 100%;background-color:rgb(89, 255, 0) ;" slot="hotspot-4"
+                data-position="88.68420945971755m 37.07484256823129m 90.24227904773002m"
+                data-normal="-0.006649449923m 0.035971938355325576m 0.9993306782375304m"
+                data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#Router2ResetPort">
+                <div class="HotspotAnnotation" style="font-size:8px;"><b>4</b></div>
+            </button>
+
+            <button class="Hotspot" style="border-radius: 100%;background-color:rgb(89, 255, 0) ;" slot="hotspot-5"
+                data-position="47.33098605286284m 21.414614725837566m 90.94919976528135m"
+                data-normal="-0.006632683433363047m 0.027969467700564785m 0.999586772815157m"
+                data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#Router2PowerConnection">
+                <div class="HotspotAnnotation" style="font-size:8px;"><b>5</b></div>
+            </button>
+
+            <button class="Hotspot" style="border-radius: 100%;background-color:rgb(89, 255, 0) ;" slot="hotspot-6"
+                data-position="-0.8094441831126034m 33.45344550357601m 72.74334285260217m"
+                data-normal="-0.00698152627196316m 0.33872976862502435m 0.9408578012314887m"
+                data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#Router2InternetPort">
+                <div class="HotspotAnnotation" style="font-size:8px;"><b>6</b></div>
+            </button>
+
+
+            <button class="Hotspot" style="border-radius: 100%;background-color:rgb(89, 255, 0) ;" slot="hotspot-7"
+                data-position="-57.48814300733627m 30.28332503405524m 73.46407912897116m"
+                data-normal="-0.006981526271955822m 0.33872976862497106m 0.940857801231508m"
+                data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#Router2LANPort">
+                <div class="HotspotAnnotation" style="font-size:8px;"><b>7</b></div>
+            </button>
+
+        </model-viewer>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Router2Led" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">LED Lights</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Lights indicate signal power, internet, and port status to keep users informed.
+                    <img src="1.png" width="100%" height="100%">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Okay</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="Router2IPAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Router</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    IP Adress > 10.10.10.1
+                    <img src="2.png" width="100%" height="100%">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Okay</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Router2Antennae" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Antennae</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Antennae broadcast wireless signals in your home network.
+                    <img src="3.png" width="100%" height="100%">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Okay</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Router2ResetPort" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Reset Port</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Port for resetting router to factory defaults.
+                    <img src="4.png" width="100%" height="100%">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Okay</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Router2PowerConnection" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Power Connection</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Power adapter port for router connection.
+                    <img src="5.png" width="100%" height="100%">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Okay</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Router2InternetPort" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">WAN/Internet Port</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Connect modem or transceiver to link home network to internet.
+                    <img src="6.png" width="100%" height="100%">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Okay</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Router2LANPort" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">LAN Ports</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Ports for wired devices on home network without wireless capability.
+                    <img src="7.png" width="100%" height="100%">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Okay</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="model-viewer-container">
+        <model-viewer src="server_racking_system.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+            poster="poster.webp" shadow-intensity="1" id="FtpServer" style="margin-left: 20%;">
+            <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-1"
+                data-position="-0.2986763782425904m 1.905029363515141m 0.5064332606660245m"
+                data-normal="7.450818835722137e-7m -0.18521761207126647m 0.9826975303612311m"
+                data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#FTPServerModal">
+                <div class="HotspotAnnotation">FTP Server</div>
+            </button>
+        </model-viewer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="FTPServerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">FTP Server</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    IP Address > ftp://10.10.10.2
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Okay</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- id="sendFileModel"
+    display: none;
+    
+
+    div - id="fileName"
+    -->
+
+    <model-viewer src="packet recieve.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+        poster="poster.webp" shadow-intensity="1" id="receiveFileModel"
+        style="z-index: 1;width: 20%;height: 10%;margin-left: 72%;margin-top: -190px;position: absolute;display: none;">
+
+        <button class="Hotspot transparent-button btn" slot="hotspot-1"
+            data-position="-0.01807796683813881m -0.13234383238683817m 0.15079345864210933m"
+            data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible" data-bs-toggle="modal"
+            data-bs-target="#packetReceiveModal">
+            <div class="HotspotAnnotation" style="font-size: smaller;" id="RfileName">File</div>
+        </button>
+
+    </model-viewer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="packetReceiveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Packet Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <b>Version (4 bits):</b> This is like the "edition" of the communication protocol being used. It
+                    tells us if it's the fourth version (IPv4) or the sixth version (IPv6).
+
+                    <br><br> <b>IHL (4 bits):</b> Think of this as the thickness of the instruction manual. It tells us
+                    how many pages (in groups of 32 bits) are in the header, which is like the cover and initial pages
+                    of the communication.
+                    <br><br><b>Type of Service (8 bits):</b> This is like marking a package with special handling
+                    instructions. It helps prioritize and manage the delivery of the data, including how it handles
+                    potential network congestion.
+                    <br><br><b>Total Length (16 bits):</b> This is the size of the entire package, including both the
+                    header (cover and initial pages) and the actual message (payload).
+                    <br><br><b>Identification (16 bits):</b> It's like assigning a unique ID to a package. Useful when
+                    the data needs to be split into smaller parts for efficient delivery.
+                    <br><br><b>Flags (3 bits):</b> These are like checkboxes indicating specific handling instructions.
+                    For example, whether the package should not be broken into smaller parts during delivery.
+                    <br><br><b>Fragment Offset (13 bits):</b> If the package is too big and needs to be split, this
+                    tells us where each part fits in the sequence, ensuring it can be reassembled correctly.
+                    <br><br><b>Time to Live (8 bits):</b> Think of this as a countdown timer. It limits the time a
+                    package is allowed to roam around the network. If the timer reaches zero, the package is discarded.
+                    <br><br><b>Protocol (8 bits):</b> This specifies the language the sender and recipient will use to
+                    understand the message. For example, it might be a language like TCP for reliability or UDP for
+                    speed.
+                    <br><br><b>Header Checksum (16 bits):</b> It's like a quick verification code at the top of a
+                    document. It helps ensure that the header (cover and initial pages) hasn’t been damaged during
+                    transit.
+                    <br><br><b>Source IP Address (32 bits):</b> This is like the return address on an envelope. It tells
+                    us where the data is coming from. In this case, the sender's IP address is 10.10.10.2.
+                    <br><br><b>Destination IP Address (32 bits):</b> This is like the delivery address on an envelope.
+                    It tells us where the data is supposed to go. In this case, the recipient's IP address is
+                    192.168.0.3.
+                    <br><br><b>Options (variable):</b> This is like including special notes or requests with the
+                    package. For instance, it might contain details like when the message was sent or the route it
+                    should take.
+                    <br><br><b>Data (Payload):</b> This is the actual message or content being sent. It's the reason for
+                    sending the package in the first place.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Okay</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Slanted line container -->
+    <div class="slanted-line-container"></div>
+    <div class="vertical-line"></div>
+    <div class="model-viewer-container" style="margin-left:69% ;margin-top: -10%;">
+        <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+            poster="poster.webp" shadow-intensity="1" id="FileUploaderUser" onclick="changeModel('FileUploaderUser')">
+
+            <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
+                data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
+                data-normal="0m 0.4745439042365091m 0.8802318347753455m" data-visibility-attribute="visible"
+                data-bs-toggle="modal" data-bs-target="#Laptop3Modal">
+                <div class="HotspotAnnotation">Laptop 1 - File Uploader User</div>
+            </button>
+        </model-viewer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Laptop3Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop - File Uploader User</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    IP Address > 192.168.0.2
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Okay</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Packet Details:\nSource IP Address: 192.168.0.2\nDestination IP Address: 10.10.10.2\nFile Size: '+ formatFileSize(file.size)) -->
+
+
+
+    <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
+        shadow-intensity="1"
+        style="width: 20%;height: 10%;margin-left: 75%;margin-top: -15px;display: none; z-index: 1;" id="sendFileModel">
+        <button class="Hotspot transparent-button btn" slot="hotspot-1"
+            data-position="-0.01807796683813881m -0.13234383238683817m 0.15079345864210933m"
+            data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible" data-bs-toggle="modal"
+            data-bs-target="#packetSendModal">
+            <div class="HotspotAnnotation" id="fileName" style="font-size: smaller;">File</div>
+        </button>
+
+    </model-viewer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="packetSendModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Packet Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+
+
+                    <b>Version (4 bits):</b> This is like the "edition" of the communication protocol being used. It
+                    tells us if it's the fourth version (IPv4) or the sixth version (IPv6).
+
+                    <br><br> <b>IHL (4 bits):</b> Think of this as the thickness of the instruction manual. It tells us
+                    how many pages (in groups of 32 bits) are in the header, which is like the cover and initial pages
+                    of the communication.
+                    <br><br><b>Type of Service (8 bits):</b> This is like marking a package with special handling
+                    instructions. It helps prioritize and manage the delivery of the data, including how it handles
+                    potential network congestion.
+                    <br><br><b>Total Length (16 bits):</b> This is the size of the entire package, including both the
+                    header (cover and initial pages) and the actual message (payload).
+                    <br><br><b>Identification (16 bits):</b> It's like assigning a unique ID to a package. Useful when
+                    the data needs to be split into smaller parts for efficient delivery.
+                    <br><br><b>Flags (3 bits):</b> These are like checkboxes indicating specific handling instructions.
+                    For example, whether the package should not be broken into smaller parts during delivery.
+                    <br><br><b>Fragment Offset (13 bits):</b> If the package is too big and needs to be split, this
+                    tells us where each part fits in the sequence, ensuring it can be reassembled correctly.
+                    <br><br><b>Time to Live (8 bits):</b> Think of this as a countdown timer. It limits the time a
+                    package is allowed to roam around the network. If the timer reaches zero, the package is discarded.
+                    <br><br><b>Protocol (8 bits):</b> This specifies the language the sender and recipient will use to
+                    understand the message. For example, it might be a language like TCP for reliability or UDP for
+                    speed.
+                    <br><br><b>Header Checksum (16 bits):</b> It's like a quick verification code at the top of a
+                    document. It helps ensure that the header (cover and initial pages) hasn’t been damaged during
+                    transit.
+                    <br><br><b>Source IP Address (32 bits):</b> This is like the return address on an envelope. It tells
+                    us where the data is coming from. In this case, the sender's IP address is 192.168.0.2.
+                    <br><br><b>Destination IP Address (32 bits):</b> This is like the delivery address on an envelope.
+                    It tells us where the data is supposed to go. In this case, the recipient's IP address is
+                    10.10.10.2.
+                    <br><br><b>Options (variable):</b> This is like including special notes or requests with the
+                    package. For instance, it might contain details like when the message was sent or the route it
+                    should take.
+                    <br><br><b>Data (Payload):</b> This is the actual message or content being sent. It's the reason for
+                    sending the package in the first place.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Okay</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container for the first model viewer element with class 'model-viewer-container' -->
+    <div class="model-viewer-container">
+
+        <!-- Image input with FileZilla logo, triggering 'addHelloText()' function on click -->
+        <input type="image" src="filezilla-logo.jpg" onclick="addHelloText()"
+            style="width: 50%; margin-left: 250%; margin-top: -100px;" />
+        <!-- Input element of type image with inline styling and click event handler -->
+
+    </div>
+    <!-- End of container div -->
+
+    <br> <!-- Line break element -->
+
+    <!-- Container for the second model viewer element with additional content -->
+    <div style="display: flex;">
+
+        <!-- Model viewer container with ID 'additionalContent' and display set to none -->
+        <div class="model-viewer-container" id="additionalContent" style="display:none; 
+            width: 40%;margin: 10px;">
+            <!-- Image element displaying the FileZilla UI model with ID 'FilezillaUiModel' -->
+            <img src="filezilla.jpg" id="FilezillaUiModel" width="100%" height="100%" style="cursor: pointer;">
+
+            <!-- Image element with inline styling and cursor style -->
+
+        </div>
+        <!-- End of model viewer container -->
+
+        <!-- </div> -->
+
+
+
+
+        <!-- File Upload Button -->
+        <!-- Input element for file selection with ID 'fileInput' and display set to none -->
+        <input type="file" id="fileInput" style="display: none;">
+        <!-- End of file input element -->
+
+        <!-- Button element with ID 'additionalContent1' for file selection and upload -->
+        <button id="additionalContent1" style="display:none;height:50%;" onclick="uploadFile()"
+            class="btn btn-outline-danger btn-sm"><b>SELECT FILE</b></button>
+        &nbsp;&nbsp;&nbsp;&nbsp; <!-- Non-breaking spaces for visual separation -->
+        <!-- Button element for selecting and uploading files with inline styling and click event handler -->
+
+
+
+        <!-- Heading element with ID 'additionalContent2' and display set to none -->
+        <h6 id="additionalContent2" style="display: none;">Drag Your Local File inside the Black Box (FileZilla server):
+        </h6>
+        &nbsp;&nbsp;&nbsp;&nbsp; <!-- Non-breaking spaces for visual separation -->
+
+        <!-- End of heading element -->
+
+
+        <!-- Container div with ID 'additionalContent3' and display set to none -->
+        <div id="additionalContent3" style="display: none;">
+
+            <!-- Container div for dropping files with ID 'getData' and drag-and-drop event handlers -->
+            <div id="getData" ondrop="drop(event)" ondragover="allowDrop(event)">
+            </div>
+
+            <!-- Image element with ID 'dragData' for dragging files, draggable, and drag event handler -->
+            <img id="dragData" draggable="true" ondragstart="drag(event)" width="180" height="180">
+            <!-- End of image element -->
+
+        </div>
+        <!-- End of container div -->
+
+
+    </div><!-- End of flex container -->
+
+    </div>
+
+
+
+    <script>
+        // setTimeout(function () {
+        //     // Display the modal and overlay after 3 seconds
+        //     document.getElementById('customAlert').style.display = 'block';
+        //     document.getElementById('overlay').style.display = 'block';
+        // }, 3000); // 3000 milliseconds (3 seconds)
+
+        // // Close the modal and overlay when clicked
+        // document.getElementById('overlay').addEventListener('click', function () {
+        //     document.getElementById('customAlert').style.display = 'none';
+        //     document.getElementById('overlay').style.display = 'none';
+        // });
+
+
+        // function openModal() {
+        //     document.getElementById('customAlert').style.display = 'block';
+        //     document.getElementById('overlay').style.display = 'block';
+        // }
+
+        // function closeModal() {
+        //     document.getElementById('customAlert').style.display = 'none';
+        //     document.getElementById('overlay').style.display = 'none';
+        // }
+
+
+
+        // Function to handle the click event on the browser image
+        function handleBrowserImageClick() {
+
+            // Prompt user for FTP Server IP Address
+            const userInput = prompt("Enter FTP Server IP Address( ftp://10.10.10.2 ) connect to server:");
+
+            // Check if user input is not null and matches the expected FTP Server IP Address
+            if (userInput !== null && userInput == 'ftp://10.10.10.2') {
+
+                // Log the user input and display a connection alert
+                console.log(userInput);
+                alert("You are connected to FTP Server: " + userInput);
+
+                // Check if a file is present
+                if (file) {
+                    // Log file details
+                    console.log(file.name);
+                    console.log(file.size);
+
+                    // Show the download link and set its href attribute
+                    // Display file name and size in the link text
+
+                    // After file upload is initiated, make the model viewer visible
+                    var modelViewer = document.getElementById('receiveFileModel');
+                    modelViewer.style.display = 'block';
+
+                    // Update the content of the div with the file name
+                    var fileNameElement = document.getElementById('RfileName');
+                    fileNameElement.innerHTML = file.name + ' ' + formatFileSize(file.size);
+
+                    // Start the animation on the #receiveFileModel element
+                    var receiveFileModelElement = document.getElementById('receiveFileModel');
+                    receiveFileModelElement.classList.add('moveLeftAndDownAnimation');
+
+                    // Set a timeout to display the download link and text after 30 seconds
+                    setTimeout(function () {
+                        displayDownloadLink();
+                    }, 30000);
+
+                    // Add an event listener for the animation end
+                    receiveFileModelElement.addEventListener('animationend', function () {
+                        // Display the download link and text after the animation is completed
+                        displayDownloadLink();
+                    });
+
+                } else {
+                    // Log and alert if no file is present
+                    console.log("no file");
+                    alert("There is no file uploaded on FTP Server yet.")
+                }
+
+            } else {
+                // Alert for an invalid IP Address and prompt for correct input
+                alert("Invalid IP Address: " + userInput + " (Enter to connect: ftp://10.10.10.2)");
+                anotherFunction(); // Assuming 'anotherFunction()' is defined elsewhere
+
+            }
+
+        }
+
+        // Function to display the download link with file details
+        function displayDownloadLink() {
+            // Set the text content of the download link with file name and size
+            downloadLink.textContent = `Download File ${file.name} (${formatFileSize(file.size)})`;
+
+            // Make the download link visible
+            downloadLink.style.display = 'inline';
+        }
+
+        // Function to format file size in a human-readable format
+        function formatFileSize(bytes) {
+            // Array of size units for formatting
+            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+
+            // Return '0 Byte' if file size is zero
+            if (bytes == 0) return '0 Byte';
+
+            // Calculate the appropriate size unit and round the result
+            const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+            return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+        }
+
+
+
+
+
+        // Function to set the visibility of hotspots
+        function setHotspotVisibility(visibility) {
+            // Select all elements with class 'Hotspot'
+            const hotspots = document.querySelectorAll('.Hotspot');
+
+            // Iterate through each hotspot and set visibility attribute based on the parameter
+            hotspots.forEach(hotspot => {
+                hotspot.setAttribute('data-visibility-attribute', visibility ? 'visible' : 'hidden');
+            });
+        }
+
+        // Use a variable to track whether "Hello" has been displayed
+        var helloDisplayed = false;
+
+        // Function to add "Hello" text and display additional content
+        function addHelloText() {
+            // Check if "Hello" has not been displayed yet
+            if (!helloDisplayed) {
+                // Make the additional content container visible
+                document.getElementById('additionalContent').style.display = 'inline-block';
+
+                // Update the variable to indicate that "Hello" has been displayed
+                helloDisplayed = true;
+
+                // Display an alert message with instructions
+                alert("In the future, scroll down and click on the FileZilla Application UI model image which says that FileZilla is a free and open-source, cross-platform FTP application.");
+            }
+        }
+
+
+        // Use a variable to track whether options have been displayed
+        var OptionsDisplayed = false;
+
+        // Function to trigger the file input click
+        function uploadFile() {
+            // Trigger the click event of the file input element
+            document.getElementById('fileInput').click();
+        }
+
+        // Function to initiate the download of a dummy text file
+        function downloadFile() {
+            // For demonstration purposes, create a dummy text file content
+            var text = "This is a sample text file content.";
+
+            // Create a Blob with the text content and specify the MIME type
+            var blob = new Blob([text], { type: 'text/plain' });
+
+            // Create an anchor element to facilitate the file download
+            var a = document.createElement('a');
+
+            // Set the href attribute with a URL created from the Blob
+            a.href = window.URL.createObjectURL(blob);
+
+            // Set the desired filename for the downloaded file
+            a.download = 'sample.txt';
+
+            // Append the anchor element to the document body
+            document.body.appendChild(a);
+
+            // Simulate a click on the anchor element to initiate the download
+            a.click();
+
+            // Remove the anchor element from the document body
+            document.body.removeChild(a);
+        }
+        // Variable to store the download link element
+        var downloadLink;
+
+        // Variable to store the selected file
+        var file;
+
+        // Event listener for file input change
+        document.getElementById('fileInput').addEventListener('change', function (event) {
+            // Get the selected file from the input event
+            file = event.target.files[0];
+
+            // Log the selected file name to the console
+            console.log('File selected:', file.name);
+
+            // Update the content of the div with the file name
+            var fileNameElement = document.getElementById('fileName');
+            fileNameElement.innerHTML = file.name + ' ' + formatFileSize(file.size);
+
+            // Update the image source to the selected file
+            var imgElement = document.getElementById('dragData');
+            imgElement.src = window.URL.createObjectURL(file);
+
+            // Show the download link and set its href attribute
+            downloadLink = document.getElementById('downloadLink');
+            // downloadLink.style.display = 'inline'; // Uncomment if you want to display the link immediately
+            downloadLink.href = window.URL.createObjectURL(file);
+            downloadLink.download = file.name;
+        });
+
+
+        // Event listener for file input change
+        //  document.getElementById('fileInput').addEventListener('change', handleFileSelection);
+        // Get the FilezillaUiModel element by its ID
+        const FilezillaUiModel = document.getElementById("FilezillaUiModel");
+
+        // Add click event listener to the FilezillaUiModel element
+        FilezillaUiModel.addEventListener("click", () => {
+            // Prompt user for Server IP Address to connect to FTP server
+            const userInput = prompt("Enter Server IP Address connect ( ftp://10.10.10.2 ) to FTP server:");
+
+            // Check if user input is not null and matches the expected FTP Server IP Address
+            if (userInput !== null && userInput == 'ftp://10.10.10.2') {
+                // Log the user input
+                console.log(userInput)
+
+                // Display a connection alert
+                alert("You are connected to FTP Server: " + userInput);
+
+                // Make additional content elements visible
+                document.getElementById('additionalContent1').style.display = 'inline-block';
+                document.getElementById('additionalContent2').style.display = 'inline-block';
+                document.getElementById('additionalContent3').style.display = 'inline-block';
+
+
+                // Note: OptionsDisplayed variable is commented out as it is not defined in the provided code
+
+            } else {
+                // Alert for an invalid IP Address and prompt for correct input
+                alert("Invalid IP Address: " + userInput + " (Enter to connect: ftp://10.10.10.2)");
+
+                // Call another function (assuming 'anotherFunction()' is defined elsewhere)
+                // anotherFunction();
+            }
+        });
+
+
+        // Function to handle the case when the input doesn't match
+        function anotherFunction() {
+            // Log a message indicating that the input doesn't match
+            console.log("Input doesn't match. Calling another function.");
+
+            // Prompt user for Server IP Address to connect to FTP server
+            const userInput = prompt("Enter Server IP Address connect to server:");
+
+            // Check if user input is not null and matches the expected FTP Server IP Address
+            if (userInput !== null && userInput == 'ftp://10.10.10.2') {
+                // Log the user input
+                console.log(userInput);
+
+                // Display a connection alert
+                alert("You are connected to FTP Server: " + userInput);
+
+                // Make additional content elements visible
+                document.getElementById('additionalContent1').style.display = 'inline-block';
+                document.getElementById('additionalContent2').style.display = 'inline-block';
+                document.getElementById('additionalContent3').style.display = 'inline-block';
+
+
+            } else {
+                // Alert for an invalid IP Address and prompt for correct input
+                alert("Invalid IP Address: " + userInput + " (Enter to connect: ftp://10.10.10.2)");
+
+                // Call the function recursively (assuming 'anotherFunction()' is defined elsewhere)
+                //anotherFunction();
+            }
+        }
+
+
+
+        // Function to start the file uploading process
+        function startUploadingFile() {
+            // Assuming your file upload logic goes here
+
+            // After file upload is initiated, make the model viewer visible
+            var modelViewer = document.getElementById('sendFileModel');
+            modelViewer.style.display = 'block';
+        }
+
+        function startDownloadingFile() {
+
+            // Note: The implementation details for downloading a file are missing in the provided code
+        }
+
+        // Event listener for the 'DOMContentLoaded' event
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the 'sendFileModel' element by its ID
+            var sendFileModelElement = document.getElementById('sendFileModel');
+
+            // Add event listener for the 'animationend' event on 'sendFileModel' element
+            sendFileModelElement.addEventListener('animationend', function () {
+                // This will be triggered after the animation completes (after 4 seconds in this case)
+                alert('File Uploaded Successfully!\n\nNow Click on Internet Browser Image to Download Uploaded file from other device (Windows OS Laptop - FTP Client).');
+            });
+        });
+
+
+
+        // Get the 'receiveFileModel' element by its ID
+        const receiveFileModel = document.getElementById('receiveFileModel');
+
+        // Add an event listener to detect when the animation ends
+        receiveFileModel.addEventListener('animationend', () => {
+            // Animation is completed, show alert and make the model viewer invisible
+            alert('File Received Sucessfully With Link To Download!');
+
+            // Make the 'receiveFileModel' element invisible
+            receiveFileModel.style.display = 'none';
+        });
+
+
+        function openPdfPPT() {
+      window.open('openPdfPPT.html', '_blank');
+    }
+    
+    function openPdfDocs(){
+        window.open('openPdfDocs.html', '_blank');
+    }
+        
+
+
+
+
+        // Closing script tag for inline JavaScript code
+    </script>
+
+    <!-- Includes a JavaScript module for 3D model viewing -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <!-- Includes the Bootstrap JavaScript library from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
