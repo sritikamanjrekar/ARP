@@ -75,7 +75,7 @@
 
     .vertical-line {
       /* Set the height of the vertical line */
-      height: 255px;
+      height: 335px;
       /* Adjust the height as needed */
 
 
@@ -84,7 +84,7 @@
       /* Adjust the left margin as needed */
 
       /* Set the top margin to position the vertical line up from the top */
-      margin-top: -10.2%;
+      margin-top: -8.9%;
       /* Adjust the top margin as needed */
 
       /* Set the position property to absolute for precise positioning */
@@ -97,6 +97,9 @@
 
       /* Define the border style as dashed */
       border-style: solid;
+
+      z-index: -1;
+
     }
 
 
@@ -141,9 +144,334 @@
       /* Adjust as needed */
     }
 
+    @keyframes moveRight {
+      0% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(1300%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes moveRight1 {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(1300%);
+      }
+
+    }
+
+    @keyframes moveLeft {
+      0% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+
+
+
+    @keyframes moveFromRight {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+
+      50% {
+        transform: translateX(710%) translateY(0%);
+      }
+
+      100% {
+        transform: translateX(710%) translateY(100%);
+      }
+    }
+
+    @keyframes moveFromRight1 {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+
+      25% {
+        transform: translateX(710%) translateY(0%);
+      }
+
+      50% {
+        transform: translateX(710%) translateY(100%);
+      }
+
+      75% {
+        transform: translateX(710%) translateY(0%);
+      }
+
+      100% {
+        transform: translateX(0%) translateY(0%);
+      }
+    }
+
+
+
+    #model1,
+    #model12 {
+      width: 5%;
+      z-index: 1;
+      margin-top: -52%;
+      margin-left: 10%;
+      display: none;
+      position: absolute;
+
+      animation-iteration-count: 1;
+      animation-timing-function: linear;
+    }
+
+    #model2,
+    #model22 {
+      display: none;
+      width: 5%;
+      z-index: 1;
+      margin-left: 46%;
+      /* 
+      animation-iteration-count: 1;
+      animation-timing-function: linear; */
+
+    }
+
+    #model3,
+    #model33 {
+      display: none;
+      width: 5%;
+      z-index: 1;
+      margin-left: 76%;
+      /* 
+      animation-iteration-count: 1;
+      animation-timing-function: linear; */
+
+    }
+
     #model1 {
-      width: 10%;
-      display: flex;
+      animation-duration: 20s;
+    }
+
+    #model12 {
+      animation-duration: 20s;
+    }
+
+    #model2 {
+      animation-duration: 20s;
+    }
+
+    #model22 {
+      animation-duration: 20s;
+    }
+
+    #model3,
+    #model33 {
+      animation-duration: 20s;
+    }
+
+    .moveRight {
+      animation-name: moveRight;
+    }
+
+    .moveRight1 {
+      animation-name: moveRight1;
+    }
+
+    .moveFromRight1 {
+      animation-name: moveFromRight1;
+    }
+
+    .moveFromRight {
+      animation-name: moveFromRight;
+    }
+
+    .moveLeft {
+      animation-name: moveLeft;
+    }
+
+    .moveUp2 {
+      animation-name: moveUp2;
+    }
+
+    .moveUp22 {
+      animation-name: moveUp22;
+    }
+
+    .moveUp3 {
+      animation-name: moveUp3;
+    }
+
+    .moveUp33 {
+      animation-name: moveUp33;
+    }
+
+    .moveLeft3 {
+      animation-name: moveLeft3;
+    }
+
+    .moveLeft33 {
+      animation-name: moveLeft33;
+    }
+
+    .moveLeft4 {
+      animation-name: moveLeft4;
+    }
+
+    .moveLeft44 {
+      animation-name: moveLeft44;
+    }
+
+    @keyframes moveLeft3 {
+      0% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(-1200%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes moveLeft44 {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-1200%);
+      }
+
+
+    }
+
+    @keyframes moveLeft33 {
+      0% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(-600%);
+      }
+
+      100% {
+        transform: translateX(-600%) translateY(100%);
+      }
+
+
+    }
+
+    @keyframes moveLeft4 {
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-600%);
+      }
+
+      50% {
+        transform: translateX(-600%) translateY(100%);
+      }
+
+      75% {
+        transform: translateX(-600%) translateY(0%);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+
+
+    @keyframes moveUp2 {
+      0% {
+        transform: translateY(0);
+      }
+
+      25% {
+        transform: translateY(-100%);
+      }
+
+      50% {
+        transform: translateY(-100%) translateX(-600%);
+      }
+
+      75% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes moveUp22 {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(-100%) translateX(700%);
+      }
+    }
+
+    @keyframes moveUp3 {
+      0% {
+        transform: translateY(0);
+      }
+
+      25% {
+        transform: translateY(-100%);
+      }
+
+      50% {
+        transform: translateY(-100%) translateX(600%);
+      }
+
+      75% {
+        transform: translateY(-100%) translateX(0%);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+
+    }
+
+
+    @keyframes moveUp33 {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(-100%) translateX(-600%);
+      }
     }
   </style>
 </head>
@@ -180,35 +508,29 @@
   <hr> <!-- Horizontal rule element -->
 
 
+
+
+
+
+
+
+
   <div class="model-viewer-container">
-    <div id="modelContainer">
-      <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
-        tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model1"
-        style="width: 30%;z-index: 1;">
-        <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
-          data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
-          data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible">
-          <div class="HotspotAnnotation">Packet</div>
-        </button>
-      </model-viewer>
 
+    <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
+      shadow-intensity="1" style="margin-left: 0%;margin-top: -73%; display: flex;">
 
-
-
-      <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
-        poster="poster.webp" shadow-intensity="1" style="margin-left: -49%;margin-top: -13%; display: flex;">
-
-        <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
-          data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
-          data-normal="0m 0.4745439042365091m 0.8802318347753455m" data-visibility-attribute="visible"
-          data-bs-toggle="modal" data-bs-target="#PC-1IpAddress">
-          <div class="HotspotAnnotation">PC-1</div>
-        </button>
-      </model-viewer>
-
-
-    </div>
+      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
+        data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
+        data-normal="0m 0.4745439042365091m 0.8802318347753455m" data-visibility-attribute="visible"
+        data-bs-toggle="modal" data-bs-target="#PC-1IpAddress">
+        <div class="HotspotAnnotation">PC-1</div>
+      </button>
+    </model-viewer>
   </div>
+
+
+
 
 
 
@@ -219,7 +541,7 @@
 
 
     <model-viewer src="switch.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
-      shadow-intensity="1" >
+      shadow-intensity="1">
       <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-1"
         data-position="-17.82355475016235m 6.123874902725213m -167.32013377219792m" data-normal="0m 1m 0m"
         data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#Switch">
@@ -277,18 +599,6 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
-        <tr>
-
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
 
         <tr>
           <td colspan="3"><button type="button" class="btn btn-sm btn-outline-success" data-bs-toggle="modal"
@@ -307,7 +617,7 @@
   <div class="model-viewer-container">
 
     <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
-      shadow-intensity="1" style="margin-top: -30%;margin-left: 110%;">
+      shadow-intensity="1" style="margin-top: -30%;margin-left: 110%;z-index: 1;">
 
       <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
         data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
@@ -333,18 +643,7 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
-        <tr>
 
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
 
         <tr>
           <td colspan="3"><button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
@@ -369,18 +668,7 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
-        <tr>
 
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
 
         <tr>
           <td colspan="3"><button type="button" onclick="getUserInputCmdPc3()" class="btn btn-sm btn-outline-danger"
@@ -492,6 +780,70 @@
   </div>
 
 
+
+  <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+    tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model1"
+    style="width: 5%;z-index: 1;margin-left: 10%;">
+    <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
+      data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible">
+      <div class="HotspotAnnotation">Packet</div>
+    </button>
+  </model-viewer>
+
+
+  <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+    tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model12"
+    style="width: 5%;z-index: 1;margin-left: 10%;">
+    <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
+      data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible">
+      <div class="HotspotAnnotation">Packet</div>
+    </button>
+  </model-viewer>
+
+
+  <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+    tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model2" style="margin-top: -30%;">
+    <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
+      data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible">
+      <div class="HotspotAnnotation">Packet</div>
+    </button>
+  </model-viewer>
+
+
+  <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+    tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model22" style="margin-top: -20%;">
+    <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
+      data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible">
+      <div class="HotspotAnnotation">Packet</div>
+    </button>
+  </model-viewer>
+
+  <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+    tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model3" style="margin-top: -50%;">
+    <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
+      data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible">
+      <div class="HotspotAnnotation">Packet</div>
+    </button>
+  </model-viewer>
+
+
+  <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+    tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model33" style="margin-top: -20%;">
+    <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
+      data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible">
+      <div class="HotspotAnnotation">Packet</div>
+    </button>
+  </model-viewer>
+
+
+
+
   <script>
 
     function getUserInputCmdPc3() {
@@ -501,26 +853,157 @@
       // Prompt user for input
       var userInput = prompt("PC-3 Command Prompt\nSome ARP Commands are 'arp -a', 'ping ip_address'\nEnter something:");
 
+
       // Check if user clicked "OK" and entered some text
-      if (userInput !== null && userInput.trim() !== "") {
+      if (userInput == 'ping 192.168.11.1') {
+        // Show the models by setting display to block
+        var modelViewer = document.getElementById('model2');
+        var modelViewer12 = document.getElementById('model22');
 
-        // Show alert with user input
-        //alert("You entered: " + userInput);
-
-        // Show the model by setting display to block
-        var modelViewer = document.getElementById('model1');
         modelViewer.style.display = 'block';
+        modelViewer12.style.display = 'block';
 
-        // Add a class to start the animation
-        modelViewer.classList.add('moveRight');
+        // Add class to start the animation for model1
+        modelViewer.classList.add('moveUp2');
 
-        // Remove the class after the animation is completed (adjust the time accordingly)
+        // Add classes to start the animations for model12
+        modelViewer12.classList.add('moveUp22');
+
+        // Remove the classes after the animations are completed (adjust the time accordingly)
         setTimeout(function () {
-          modelViewer.classList.remove('moveRight');
-        }, 10000); // 10 seconds, adjust as needed
+          //modelViewer.classList.remove('moveUp2');
+          //modelViewer.style.display = 'none';
+          alert('Got Mac Address of PC having IP Address 192.168.11.1')
 
 
-      } if (userInput == 'arp -a') {
+          // Adding a new row to the table
+          var table = document.getElementById('PC3Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.1'; // Replace with the actual IP address
+          cell2.innerHTML = '0090.2B8C.D0C2'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+
+          modelViewer.classList.remove('moveUp2');
+          modelViewer.style.display = 'none';
+          modelViewer12.classList.remove('moveUp22');
+          modelViewer12.style.display = 'none';
+
+        }, 20000); // 20 seconds, adjust as needed
+
+        setTimeout(function () {
+          //modelViewer12.classList.remove('moveUp2');
+          //modelViewer12.style.display = 'none';
+
+          // Adding a new row to the table
+          var table = document.getElementById('PC1Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.3'; // Replace with the actual IP address
+          cell2.innerHTML = '00E0.59AC.14D8'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+
+
+        }, 10000); // 20 seconds, adjust as needed
+
+
+
+
+      }
+
+
+      // Check if user clicked "OK" and entered some text
+      if (userInput == 'ping 192.168.11.2') {
+        // Show the models by setting display to block
+        var modelViewer = document.getElementById('model2');
+        var modelViewer12 = document.getElementById('model22');
+
+        modelViewer.style.display = 'block';
+        modelViewer12.style.display = 'block';
+
+        // Add class to start the animation for model1
+        modelViewer.classList.add('moveUp3');
+
+        // Add classes to start the animations for model12
+        modelViewer12.classList.add('moveUp33');
+
+        // Remove the classes after the animations are completed (adjust the time accordingly)
+        setTimeout(function () {
+          // modelViewer.classList.remove('moveUp3');
+          // modelViewer.style.display = 'none';
+          alert('Got Mac Address of PC having IP Address 192.168.11.2')
+
+
+          // Adding a new row to the table
+          var table = document.getElementById('PC3Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.2'; // Replace with the actual IP address
+          cell2.innerHTML = '0090.2B8C.D0C2'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+          modelViewer.classList.remove('moveUp3');
+          modelViewer.style.display = 'none';
+          modelViewer12.classList.remove('moveUp33');
+          modelViewer12.style.display = 'none';
+
+
+        }, 20000); // 20 seconds, adjust as needed
+
+        setTimeout(function () {
+          //modelViewer12.classList.remove('moveUp2');
+          //modelViewer12.style.display = 'none';
+
+          // Adding a new row to the table
+          var table = document.getElementById('PC2Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.3'; // Replace with the actual IP address
+          cell2.innerHTML = '0090.2B8C.D0C2'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+
+
+
+        }, 10000); // 20 seconds, adjust as needed
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+      if (userInput == 'arp -a') {
 
         // Check if there are any rows with non-empty cells
         var hasData = Array.from(tableRows).some(row => {
@@ -549,26 +1032,146 @@
       // Prompt user for input
       var userInput = prompt("PC-2 Command Prompt\nSome ARP Commands are 'arp -a', 'ping ip_address'\nEnter something:");
 
+
+
       // Check if user clicked "OK" and entered some text
-      if (userInput !== null && userInput.trim() !== "") {
+      if (userInput == 'ping 192.168.11.1') {
+        // Show the models by setting display to block
+        var modelViewer = document.getElementById('model3');
+        var modelViewer12 = document.getElementById('model33');
 
-        // Show alert with user input
-        //alert("You entered: " + userInput);
-
-        // Show the model by setting display to block
-        var modelViewer = document.getElementById('model1');
         modelViewer.style.display = 'block';
+        modelViewer12.style.display = 'block';
 
-        // Add a class to start the animation
-        modelViewer.classList.add('moveRight');
+        // Add class to start the animation for model1
+        modelViewer.classList.add('moveLeft3');
 
-        // Remove the class after the animation is completed (adjust the time accordingly)
+        // Add classes to start the animations for model12
+        modelViewer12.classList.add('moveLeft33');
+
+        // Remove the classes after the animations are completed (adjust the time accordingly)
         setTimeout(function () {
-          modelViewer.classList.remove('moveRight');
-        }, 10000); // 10 seconds, adjust as needed
+
+          alert('Got Mac Address of PC having IP Address 192.168.11.1')
 
 
-      } if (userInput == 'arp -a') {
+          // Adding a new row to the table
+          var table = document.getElementById('PC2Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.1'; // Replace with the actual IP address
+          cell2.innerHTML = '0090.2B8C.D0C2'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+          modelViewer.classList.remove('moveLeft3');
+          modelViewer.style.display = 'none';
+          modelViewer12.classList.remove('moveLeft33');
+          modelViewer12.style.display = 'none';
+
+
+        }, 20000); // 20 seconds, adjust as needed
+
+        setTimeout(function () {
+
+
+          // Adding a new row to the table
+          var table = document.getElementById('PC1Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.2'; // Replace with the actual IP address
+          cell2.innerHTML = '0090.2B8C.D0C2'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+
+
+
+        }, 10000); // 20 seconds, adjust as needed
+
+
+      }
+
+      // Check if user clicked "OK" and entered some text
+      if (userInput == 'ping 192.168.11.3') {
+        // Show the models by setting display to block
+        var modelViewer = document.getElementById('model3');
+        var modelViewer12 = document.getElementById('model33');
+
+        modelViewer.style.display = 'block';
+        modelViewer12.style.display = 'block';
+
+        // Add class to start the animation for model1
+        modelViewer.classList.add('moveLeft4');
+
+        // Add classes to start the animations for model12
+        modelViewer12.classList.add('moveLeft44');
+
+        // Remove the classes after the animations are completed (adjust the time accordingly)
+        setTimeout(function () {
+
+          alert('Got Mac Address of PC having IP Address 192.168.11.3')
+
+
+          // Adding a new row to the table
+          var table = document.getElementById('PC2Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.3'; // Replace with the actual IP address
+          cell2.innerHTML = '0090.2B8C.D0C2'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+          modelViewer.classList.remove('moveLeft4');
+          modelViewer.style.display = 'none';
+          modelViewer12.classList.remove('moveLeft44');
+          modelViewer12.style.display = 'none';
+
+
+        }, 20000); // 20 seconds, adjust as needed
+
+        setTimeout(function () {
+
+
+          // Adding a new row to the table
+          var table = document.getElementById('PC3Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.2'; // Replace with the actual IP address
+          cell2.innerHTML = '0090.2B8C.D0C2'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+
+
+
+        }, 10000); // 20 seconds, adjust as needed
+
+
+      }
+
+
+
+
+
+
+      if (userInput == 'arp -a') {
 
         // Check if there are any rows with non-empty cells
         var hasData = Array.from(tableRows).some(row => {
@@ -601,25 +1204,147 @@
       var userInput = prompt("PC-1 Command Prompt\nSome ARP Commands are 'arp -a', 'ping ip_address'\nEnter something:");
 
       // Check if user clicked "OK" and entered some text
-      if (userInput !== null && userInput.trim() !== "") {
-
-        // Show alert with user input
-        //alert("You entered: " + userInput);
-
-        // Show the model by setting display to block
+      if (userInput == 'ping 192.168.11.2') {
+        // Show the models by setting display to block
         var modelViewer = document.getElementById('model1');
-        modelViewer.style.display = 'block';
+        var modelViewer12 = document.getElementById('model12');
 
-        // Add a class to start the animation
+        modelViewer.style.display = 'block';
+        modelViewer12.style.display = 'block';
+
+        // Add class to start the animation for model1
         modelViewer.classList.add('moveRight');
 
-        // Remove the class after the animation is completed (adjust the time accordingly)
+        // Add classes to start the animations for model12
+        modelViewer12.classList.add('moveFromRight');
+
+        // Remove the classes after the animations are completed (adjust the time accordingly)
         setTimeout(function () {
+          // modelViewer.classList.remove('moveRight');
+          //modelViewer.style.display = 'none';
+
+
+
+          alert('Got Mac Address of PC having IP Address 192.168.11.2')
+
+          // Adding a new row to the table
+          var table = document.getElementById('PC1Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.2'; // Replace with the actual IP address
+          cell2.innerHTML = '0090.2B8C.D0C2'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
           modelViewer.classList.remove('moveRight');
-        }, 10000); // 10 seconds, adjust as needed
+          modelViewer.style.display = 'none';
+          modelViewer12.classList.remove('moveFromRight');
+          modelViewer12.style.display = 'none';
 
 
-      } if (userInput == 'arp -a') {
+        }, 20000); // 20 seconds, adjust as needed
+
+        setTimeout(function () {
+          //modelViewer12.classList.remove('moveRight');
+          //modelViewer12.style.display = 'none';
+
+          // Adding a new row to the table
+          var table = document.getElementById('PC2Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.1'; // Replace with the actual IP address
+          cell2.innerHTML = '00E0.59AC.14D8'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+
+
+        }, 10000); // 20 seconds, adjust as needed
+
+
+
+
+      }
+
+      // Check if user clicked "OK" and entered some text
+      if (userInput == 'ping 192.168.11.3') {
+        // Show the models by setting display to block
+        var modelViewer = document.getElementById('model1');
+        var modelViewer12 = document.getElementById('model12');
+
+        modelViewer.style.display = 'block';
+        modelViewer12.style.display = 'block';
+
+        // Add class to start the animation for model1
+        modelViewer.classList.add('moveRight1');
+
+        // Add classes to start the animations for model12
+        modelViewer12.classList.add('moveFromRight1');
+
+        // Remove the classes after the animations are completed (adjust the time accordingly)
+        setTimeout(function () {
+          //modelViewer.classList.remove('moveRight1');
+          //modelViewer.style.display = 'none';
+          alert('Got Mac Address of PC having IP Address 192.168.11.3')
+
+
+          // Adding a new row to the table
+          var table = document.getElementById('PC1Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.3'; // Replace with the actual IP address
+          cell2.innerHTML = '0090.2B8C.D0C2'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+
+          modelViewer.classList.remove('moveRight1');
+          modelViewer.style.display = 'none';
+          modelViewer12.classList.remove('moveFromRight1')
+          modelViewer12.style.display = 'none';
+
+        }, 20000); // 20 seconds, adjust as needed
+
+        setTimeout(function () {
+          //modelViewer12.classList.remove('moveFromRight1');
+          //modelViewer12.style.display = 'none';
+
+          // Adding a new row to the table
+          var table = document.getElementById('PC3Table').getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // You can customize the content of the new row as needed
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+
+          cell1.innerHTML = '192.168.11.1'; // Replace with the actual IP address
+          cell2.innerHTML = '00E0.59AC.14D8'; // Replace with the actual hardware address
+          cell3.innerHTML = 'Fast Ethernet 0/1'; // Replace with the actual interface
+
+
+
+        }, 10000); // 20 seconds, adjust as needed
+
+
+
+
+      }
+
+
+      if (userInput == 'arp -a') {
 
         // Check if there are any rows with non-empty cells
         var hasData = Array.from(tableRows).some(row => {
