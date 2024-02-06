@@ -493,7 +493,8 @@
       <h1>Address Resolution Protocol (ARP)</h1>
       <!-- Heading element -->
       <button class="btn btn-warning btn-sm" onclick="openPdfPPT()">About ARP</button>
-      &ensp;&ensp;<button class="btn btn-primary btn-sm" onclick="openPdfDocs()">How To Use ARP</button>
+      &ensp;&ensp;<button class="btn btn-primary btn-sm" onclick="openPdfDocs()">How To Use ARP Document</button>
+      &ensp;&ensp;<button class="btn btn-danger btn-sm" onclick="openVideo()">How To Use ARP Video</button>
 
 
 
@@ -506,14 +507,6 @@
   <!-- End of container div -->
 
   <hr> <!-- Horizontal rule element -->
-
-
-
-
-
-
-
-
 
   <div class="model-viewer-container">
 
@@ -543,15 +536,9 @@
   </div>
 
 
-
-
-
-
   <div class="connector-1" data-bs-toggle="modal" data-bs-target="#Connector"></div>
 
   <div class="model-viewer-container">
-
-
 
     <model-viewer src="switch.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
       shadow-intensity="1">
@@ -568,13 +555,7 @@
 
 
 
-
-
-
-
-
   <div class="model-viewer-container">
-
 
 
     <!-- <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
@@ -587,7 +568,6 @@
         <div class="HotspotAnnotation">PC-2</div>
       </button>
     </model-viewer> -->
-
 
     <model-viewer src="personal_computer (1).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
       tone-mapping="commerce" poster="poster.webp" shadow-intensity="2" exposure="1.5" shadow-softness="1"
@@ -606,8 +586,6 @@
 
 
   <div class="connector" data-bs-toggle="modal" data-bs-target="#Connector"></div>
-
-
 
   <div class="vertical-line" data-bs-toggle="modal" data-bs-target="#Connector"></div>
 
@@ -722,7 +700,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-1</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS PC-1</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
@@ -741,7 +719,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-2</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS PC-2</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
@@ -759,7 +737,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS Laptop PC-3</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Windows OS PC-3</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
@@ -1653,7 +1631,10 @@
 
     }
 
-
+    function openVideo(){
+      var link = 'https://youtu.be/M7_bUx65vqw';
+            window.open(link, '_blank'); // '_blank' opens the link in a new tab
+    }
 
 
 
