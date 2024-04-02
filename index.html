@@ -15,6 +15,17 @@
 
 
   <style>
+
+
+.connector,
+.connector-1 {
+  position: relative; /* Use relative positioning */
+}
+
+
+ 
+
+
     .connector {
       /* Set the width of the connector element */
       width: 23%;
@@ -29,14 +40,14 @@
       /* Adjust the color as needed */
 
       /* Set the position property to absolute for precise positioning */
-      position: absolute;
+      
 
       /* Set the left margin to position the connector horizontally */
       margin-left: 19%;
       /* Adjust the left margin as needed */
 
       /* Set the top position to separate it from the models */
-      top: 31%;
+      margin-top: -8.2%;
       /* Adjust the top position as needed */
 
       /* Set the z-index to 1 for layering, ensuring it appears above other elements */
@@ -59,16 +70,13 @@
       background-color: green;
       /* Adjust the color as needed */
 
-      /* Set the position property to absolute for precise positioning */
-      position: absolute;
-      /* Change from absolute to fixed */
 
       /* Set the left margin to position the connector horizontally */
       margin-left: 52.5%;
       /* Adjust the left margin as needed */
 
       /* Set the top position to separate it from the models */
-      top: 31%;
+      top: -103px;
       /* Adjust the top position as needed */
 
       /* Set the z-index to 1 for layering, ensuring it appears above other elements */
@@ -80,27 +88,18 @@
     .vertical-line {
 
       height: 300px;
-
-
-      position: absolute;
+      
+      width: 1px;
 
       margin-left: 47%;
-
-      margin-top: -8%;
-      /* Adjust the top margin as needed */
-
-      /* Set the position property to absolute for precise positioning */
-
-      /* Adjust the margin as needed */
-
-      /* Change the color of the dashed border */
+    
       border-color: red;
-      /* Adjust the border color as needed */
 
-      /* Define the border style as dashed */
       border-style: solid;
 
       z-index: 0;
+
+      position: relative;
 
     }
 
@@ -193,7 +192,7 @@
     #model12 {
       width: 5%;
       z-index: 1;
-      margin-top: -52%;
+      margin-top: -51%;
       margin-left: 10%;
       display: none;
       position: absolute;
@@ -207,12 +206,63 @@
       display: none;
       width: 5%;
       z-index: 1;
-      margin-left: 46%;
+      margin-left: 44.6%;
+      position: absolute;
+      margin-top: -30%;
       /* 
       animation-iteration-count: 1;
       animation-timing-function: linear; */
 
     }
+
+    .packet-button {
+            /* Set the background color of the button to transparent */
+            background-color: white;
+
+            /* Set the text color of the button */
+            color: rgb(59, 0, 101);
+            /* Set the text color */
+
+            /* Add a border to the button with a 2px width and the specified color */
+            border: 2px solid rgb(59, 0, 101);
+            /* Set the border color */
+
+            /* Set the cursor to a pointer to indicate interactivity */
+            cursor: pointer;
+
+            /* Add a smooth transition effect for background color and text color changes */
+            transition: background-color 0.1s ease, color 0.1s ease;
+            /* Add a smooth transition effect */
+
+            /* Apply the 'rainbow' animation with a duration of 3s and infinite repeat */
+            animation: packet_color 10s infinite;
+            /* Add rainbow animation */
+            /* Add rainbow animation */
+        }
+
+
+        /* Define a keyframe animation named 'rainbow' */
+
+        @keyframes packet_color {
+
+
+
+
+            50% {
+                /* Set the color and border color to green */
+                color: red;
+                border-color: red;
+            }
+
+            100% {
+                /* Set the color and border color to green */
+                color: blue;
+                border-color: blue;
+            }
+
+
+        }
+
 
     #model3,
     #model33 {
@@ -220,6 +270,7 @@
       width: 5%;
       z-index: 1;
       margin-left: 76%;
+      position: absolute;
       /* 
       animation-iteration-count: 1;
       animation-timing-function: linear; */
@@ -582,7 +633,7 @@
       <div class="model-viewer-container">
 
         <model-viewer src="switch.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
-          shadow-intensity="1" style="margin-left: 120%;margin-top: -55%;">
+          shadow-intensity="1" style="margin-left: 120%;margin-top: -60%;">
           <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-1"
             data-position="-17.82355475016235m 6.123874902725213m -167.32013377219792m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible" data-bs-toggle="modal" data-bs-target="#Switch">
@@ -621,7 +672,7 @@
 
       <div class="vertical-line" data-bs-toggle="modal" data-bs-target="#Connector"></div>
 
-      <div style="width: fit-content;margin-left: 70%;position: relative;">
+      <div style="width: fit-content;margin-left: 70%;position: relative;margin-top: -10%;">
         <table id="PC2Table" class="table table-hover table-striped border-success table-sm table-bordered">
           <caption>PC-2 ARP Table</caption>
           <thead class="table-success">
@@ -650,20 +701,11 @@
 
       <div class="model-viewer-container">
 
-        <!-- <model-viewer src="laptop (3).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
-      shadow-intensity="1" style="margin-top: -30%;margin-left: 110%;z-index: 1;">
-
-      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-3"
-        data-position="10.066504518301514m 69.27750186888898m 718.4284188104473m"
-        data-normal="0m 0.4745439042365091m 0.8802318347753455m" data-visibility-attribute="visible"
-        data-bs-toggle="modal" data-bs-target="#PC-3IpAddress">
-        <div class="HotspotAnnotation">PC-3</div>
-      </button>
-    </model-viewer> -->
+       
 
         <model-viewer src="personal_computer (1).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
           tone-mapping="commerce" poster="poster.webp" shadow-intensity="2" exposure="1.5" shadow-softness="1"
-          style="z-index: 2;margin-left: 110%;margin-top: -20%;">
+          style="z-index: 2;margin-left: 110%;margin-top: -40%;">
           <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-1"
             data-position="-0.043771782138294135m -0.0007097379525175529m 0.5965980096034809m"
             data-normal="0m 1.6292067894774223e-7m 0.9999999999999868m" data-visibility-attribute="visible"
@@ -677,7 +719,7 @@
 
 
 
-      <div style="width: fit-content;margin-left: 5%;margin-top: -25%;position: relative;">
+      <div style="width: fit-content;margin-left: 5%;position: absolute;margin-top: -20%;">
         <table id="PC1Table" class="table table-hover table-striped border-primary table-sm table-bordered">
           <caption>PC-1 ARP Table</caption>
           <thead class="table-primary">
@@ -702,7 +744,7 @@
 
       </div>
 
-      <div style="width: fit-content;margin-left: 40%;margin-top: 17%;position: relative;">
+      <div style="width: fit-content;margin-left: 40%;position: relative;">
         <table id="PC3Table" class="table table-hover table-striped border-danger table-sm table-bordered">
           <caption>PC-3 ARP Table</caption>
           <thead class="table-danger">
@@ -730,7 +772,6 @@
 
     </div>
 
-    <!-- Modal -->
     <div class="modal fade" id="PC-1IpAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -746,7 +787,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Okay</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+           
           </div>
         </div>
       </div>
@@ -768,7 +809,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Okay</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+           
           </div>
         </div>
       </div>
@@ -789,7 +830,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Okay</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+           
           </div>
         </div>
       </div>
@@ -811,7 +852,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Okay</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+           
           </div>
         </div>
       </div>
@@ -832,7 +873,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Okay</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+           
           </div>
         </div>
       </div>
@@ -843,7 +884,7 @@
     <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
       tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model1"
       style="width: 5%;z-index: 3;margin-left: 10%;">
-      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      <button class="Hotspot packet-button btn btn-sm" slot="hotspot-2"
         data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
         data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible" data-bs-toggle="modal"
         data-bs-target="#Modal1">
@@ -877,7 +918,7 @@
     <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
       tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model12"
       style="width: 5%;z-index: 3;margin-left: 10%;">
-      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      <button class="Hotspot packet-button btn btn-sm" slot="hotspot-2"
         data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
         data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible" data-bs-toggle="modal"
         data-bs-target="#Modal12">
@@ -908,8 +949,8 @@
 
     <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
       tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model2"
-      style="margin-top: -30%;z-index: 3;">
-      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      style="z-index: 3;">
+      <button class="Hotspot packet-button btn btn-sm" slot="hotspot-2"
         data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
         data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible" data-bs-toggle="modal"
         data-bs-target="#Modal2">
@@ -940,8 +981,8 @@
 
     <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
       tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model22"
-      style="margin-top: -20%;z-index: 3;">
-      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      style="z-index: 3;">
+      <button class="Hotspot packet-button btn btn-sm" slot="hotspot-2"
         data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
         data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible" data-bs-toggle="modal"
         data-bs-target="#Modal22">
@@ -972,7 +1013,7 @@
     <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
       tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model3"
       style="margin-top: -50%;z-index: 3;">
-      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      <button class="Hotspot packet-button btn btn-sm" slot="hotspot-2"
         data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
         data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible" data-bs-toggle="modal"
         data-bs-target="#Modal3">
@@ -1003,8 +1044,8 @@
 
     <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
       tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model33"
-      style="margin-top: -20%;z-index: 3;">
-      <button class="Hotspot transparent-button btn btn-sm" slot="hotspot-2"
+      style="margin-top: -50%;z-index: 3;">
+      <button class="Hotspot packet-button btn btn-sm" slot="hotspot-2"
         data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
         data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible" data-bs-toggle="modal"
         data-bs-target="#Modal33">
