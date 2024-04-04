@@ -15,15 +15,14 @@
 
 
   <style>
+    .connector,
+    .connector-1 {
+      position: relative;
+      /* Use relative positioning */
+    }
 
 
-.connector,
-.connector-1 {
-  position: relative; /* Use relative positioning */
-}
 
-
- 
 
 
     .connector {
@@ -37,16 +36,9 @@
 
       /* Set the background color of the connector line */
       background-color: blue;
-      /* Adjust the color as needed */
 
-      /* Set the position property to absolute for precise positioning */
-      
-
-      /* Set the left margin to position the connector horizontally */
       margin-left: 19%;
-      /* Adjust the left margin as needed */
 
-      /* Set the top position to separate it from the models */
       margin-top: -8.2%;
       /* Adjust the top position as needed */
 
@@ -88,11 +80,11 @@
     .vertical-line {
 
       height: 300px;
-      
+
       width: 1px;
 
       margin-left: 47%;
-    
+
       border-color: red;
 
       border-style: solid;
@@ -216,52 +208,52 @@
     }
 
     .packet-button {
-            /* Set the background color of the button to transparent */
-            background-color: white;
+      /* Set the background color of the button to transparent */
+      background-color: white;
 
-            /* Set the text color of the button */
-            color: rgb(59, 0, 101);
-            /* Set the text color */
+      /* Set the text color of the button */
+      color: rgb(59, 0, 101);
+      /* Set the text color */
 
-            /* Add a border to the button with a 2px width and the specified color */
-            border: 2px solid rgb(59, 0, 101);
-            /* Set the border color */
+      /* Add a border to the button with a 2px width and the specified color */
+      border: 2px solid rgb(59, 0, 101);
+      /* Set the border color */
 
-            /* Set the cursor to a pointer to indicate interactivity */
-            cursor: pointer;
+      /* Set the cursor to a pointer to indicate interactivity */
+      cursor: pointer;
 
-            /* Add a smooth transition effect for background color and text color changes */
-            transition: background-color 0.1s ease, color 0.1s ease;
-            /* Add a smooth transition effect */
+      /* Add a smooth transition effect for background color and text color changes */
+      transition: background-color 0.1s ease, color 0.1s ease;
+      /* Add a smooth transition effect */
 
-            /* Apply the 'rainbow' animation with a duration of 3s and infinite repeat */
-            animation: packet_color 10s infinite;
-            /* Add rainbow animation */
-            /* Add rainbow animation */
-        }
-
-
-        /* Define a keyframe animation named 'rainbow' */
-
-        @keyframes packet_color {
+      /* Apply the 'rainbow' animation with a duration of 3s and infinite repeat */
+      animation: packet_color 10s infinite;
+      /* Add rainbow animation */
+      /* Add rainbow animation */
+    }
 
 
+    /* Define a keyframe animation named 'rainbow' */
+
+    @keyframes packet_color {
 
 
-            50% {
-                /* Set the color and border color to green */
-                color: red;
-                border-color: red;
-            }
-
-            100% {
-                /* Set the color and border color to green */
-                color: blue;
-                border-color: blue;
-            }
 
 
-        }
+      50% {
+        /* Set the color and border color to green */
+        color: red;
+        border-color: red;
+      }
+
+      100% {
+        /* Set the color and border color to green */
+        color: blue;
+        border-color: blue;
+      }
+
+
+    }
 
 
     #model3,
@@ -534,7 +526,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 text-center logo-wrap">
-          <div id="fh5co-logo"><a href="https://sritikamanjrekar.github.io/ARNetExperience/"><img src="image.png"
+          <div id="fh5co-logo"><a href="https://sritikamanjrekar.github.io/ARNetExperience/"><img src="logo.png"
                 alt="logo" width="20%" /><span></span></a></div>
 
 
@@ -542,7 +534,7 @@
 
         </div>
 
-        <div class="col-xs-12 text-center menu-1 menu-wrap">
+        <div class="col-xs-12 text-center menu-1 menu-wrap nav-links nav-btn">
           <ul>
             <li><a href="https://sritikamanjrekar.github.io/ARNetExperience/">Home</a></li>
 
@@ -550,7 +542,184 @@
             <li><a href="https://sritikamanjrekar.github.io/ARNetExperience/#fh5co-about">About</a></li>
             <li><a href="https://sritikamanjrekar.github.io/ARNetExperience/learning.html">Start Learning</a></li>
 
-            <li><a href="https://sritikamanjrekar.github.io/ARNetExperience/learning.html">Manual</a></li>
+            <li class="nav-link" style="--i: .85s"><a href="">CN Protocols</a>
+
+              <div class="dropdown">
+                <ul>
+                  <li class="dropdown-link">
+                    <a href="#">FTP<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown second">
+                      <ul>
+                        <li class="dropdown-link">
+                          <a href="#">Simulation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Documentation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Video</a>
+                        </li>
+                        <div class="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="dropdown-link">
+                    <a href="#">ARP<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown second">
+                      <ul>
+                        <li class="dropdown-link">
+                          <a href="#">Simulation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Documentation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Video</a>
+                        </li>
+                        <div class="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="dropdown-link">
+                    <a href="#">RARP<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown second">
+                      <ul>
+                        <li class="dropdown-link">
+                          <a href="#">Simulation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Documentation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Video</a>
+                        </li>
+                        <div class="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="dropdown-link">
+                    <a href="#">SMTP<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown second">
+                      <ul>
+                        <li class="dropdown-link">
+                          <a href="#">Simulation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Documentation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Video</a>
+                        </li>
+                        <div class="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="dropdown-link">
+                    <a href="#">HTTP<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown second">
+                      <ul>
+                        <li class="dropdown-link">
+                          <a href="#">Simulation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Documentation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Video</a>
+                        </li>
+                        <div class="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="dropdown-link">
+                    <a href="#">SSH<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown second">
+                      <ul>
+                        <li class="dropdown-link">
+                          <a href="#">Simulation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Documentation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Video</a>
+                        </li>
+                        <div class="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="dropdown-link">
+                    <a href="#">SNMP<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown second">
+                      <ul>
+                        <li class="dropdown-link">
+                          <a href="#">Simulation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Documentation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Video</a>
+                        </li>
+                        <div class="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="dropdown-link">
+                    <a href="#">DHCP<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown second">
+                      <ul>
+                        <li class="dropdown-link">
+                          <a href="#">Simulation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Documentation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Video</a>
+                        </li>
+                        <div class="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="dropdown-link">
+                    <a href="#">BGP<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown second">
+                      <ul>
+                        <li class="dropdown-link">
+                          <a href="#">Simulation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Documentation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Video</a>
+                        </li>
+                        <div class="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="dropdown-link">
+                    <a href="#">VLAN<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown second">
+                      <ul>
+                        <li class="dropdown-link">
+                          <a href="#">Simulation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Documentation</a>
+                        </li>
+                        <li class="dropdown-link">
+                          <a href="#">Video</a>
+                        </li>
+                        <div class="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </li>
             <li><a href="https://sritikamanjrekar.github.io/ARNetExperience/contact.html">Contact</a></li>
           </ul>
 
@@ -563,12 +732,8 @@
 
 
 
-
-
-
-
   <div>
-    <div style="margin-left: 86%;margin-top: -3%;">
+    <div style="margin-left: 86%;margin-top: -6%;">
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://sritikamanjrekar.github.io/ARP/" target="_blank"><i
           class="ri-facebook-fill btn btn-primary" style="border-radius: 50%;"></i></a>
       <a href="https://twitter.com/intent/tweet?url=https://sritikamanjrekar.github.io/ARP/&text=Check%20out%20this%20awesome%20website!"
@@ -701,7 +866,7 @@
 
       <div class="model-viewer-container">
 
-       
+
 
         <model-viewer src="personal_computer (1).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
           tone-mapping="commerce" poster="poster.webp" shadow-intensity="2" exposure="1.5" shadow-softness="1"
@@ -787,7 +952,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Okay</button>
-           
+
           </div>
         </div>
       </div>
@@ -809,7 +974,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Okay</button>
-           
+
           </div>
         </div>
       </div>
@@ -830,7 +995,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Okay</button>
-           
+
           </div>
         </div>
       </div>
@@ -852,7 +1017,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Okay</button>
-           
+
           </div>
         </div>
       </div>
@@ -873,7 +1038,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Okay</button>
-           
+
           </div>
         </div>
       </div>
@@ -948,8 +1113,7 @@
 
 
     <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
-      tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model2"
-      style="z-index: 3;">
+      tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model2" style="z-index: 3;">
       <button class="Hotspot packet-button btn btn-sm" slot="hotspot-2"
         data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
         data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible" data-bs-toggle="modal"
@@ -980,8 +1144,7 @@
 
 
     <model-viewer src="packet send.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
-      tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model22"
-      style="z-index: 3;">
+      tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" id="model22" style="z-index: 3;">
       <button class="Hotspot packet-button btn btn-sm" slot="hotspot-2"
         data-position="-0.003848217995850542m -0.14425149508449575m 0.15079345864210944m"
         data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible" data-bs-toggle="modal"
@@ -1079,9 +1242,9 @@
         <div class="row row-pb-md">
           <div class="col-md-4 fh5co-widget">
             <!-- <h4 style="color: #ffffff;">ARNetExperience</h4> -->
-            <a href="https://sritikamanjrekar.github.io/ARNetExperience/"><img src="image.png" alt="" width="60%"></a>
+            <a href="https://sritikamanjrekar.github.io/ARNetExperience/"><img src="logo.png" alt="" width="60%"></a>
             <br><br>
-            <p style="color: #ffffff;">Step into the Future of Learning with ARNetExperience | Explore
+            <p style="color: #000000;">Step into the Future of Learning with ARNetExperience | Explore
               Computer
               Networks like Never
               Before!</p>
@@ -1117,7 +1280,7 @@
         <div class="row copyright">
           <div class="col-md-12 text-center">
             <p>
-              <small class="block" style="color: #ffffff;">© 2024 ARNetExperience. All rights
+              <small class="block" style="color: #000000;">© 2024 ARNetExperience. All rights
                 reserved.
                 Built with passion and innovation.</small>
 
