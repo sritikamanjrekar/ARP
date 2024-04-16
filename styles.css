@@ -677,8 +677,9 @@ h3 {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 10rem;
-  transform: translateY(10px);
+  width: 11rem;
+
+  transform: translateY(5px);
   opacity: 0;
   pointer-events: none;
   transition: .5s;
@@ -688,19 +689,25 @@ h3 {
   position: relative;
 }
 
+#documentation , #video{
+  padding: 10px 6px;
+  
+}
+
+
 .dropdown-link>a {
   display: flex;
   background-color: #fff;
   color: #000000;
-  padding: .5rem 1rem;
-  font-size: .9rem;
+  padding: 0rem 1rem;
+  font-size: 0rem;
   align-items: center;
   justify-content: space-between;
   transition: .3s;
 }
 
 .dropdown-link:hover>a {
-  background-color: #444648;
+  background-color: #e1e1e1;
   color: #fff;
 }
 
