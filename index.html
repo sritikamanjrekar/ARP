@@ -792,6 +792,7 @@
             IP Address > 192.168.11.1
             &ensp;
             <i class="ri-file-copy-line btn btn-outline-primary btn-sm" onclick="copyText1()"></i>
+            <span class="text-primary" id="copyTextMessage1"></span>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Okay</button>
@@ -814,6 +815,7 @@
             IP Address > 192.168.11.2
             &ensp;
             <i class="ri-file-copy-line btn btn-outline-success btn-sm" onclick="copyText2()"></i>
+            <span class="text-success" id="copyTextMessage2"></span>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Okay</button>
@@ -835,6 +837,7 @@
             IP Address > 192.168.11.3
             &ensp;
             <i class="ri-file-copy-line btn btn-outline-danger btn-sm" onclick="copyText3()"></i>
+            <span class="text-danger" id="copyTextMessage3"></span>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Okay</button>
@@ -1157,6 +1160,13 @@
         inputElement.select();
         document.execCommand("copy");
         inputElement.setAttribute("hidden", true); // Hide the input again
+
+         // Display message
+         var copyTextMessage1 = document.getElementById("copyTextMessage1");
+                copyTextMessage1.textContent = " Text copied!";
+                setTimeout(function () {
+                    copyTextMessage1.textContent = "";
+                }, 2000); // Clear the message after 2 seconds
       }
 
       function copyText2() {
@@ -1167,6 +1177,13 @@
         inputElement.select();
         document.execCommand("copy");
         inputElement.setAttribute("hidden", true); // Hide the input again
+
+         // Display message
+         var copyTextMessage2 = document.getElementById("copyTextMessage2");
+                copyTextMessage2.textContent = " Text copied!";
+                setTimeout(function () {
+                    copyTextMessage2.textContent = "";
+                }, 2000); // Clear the message after 2 seconds
       }
 
       function copyText3() {
@@ -1177,6 +1194,13 @@
         inputElement.select();
         document.execCommand("copy");
         inputElement.setAttribute("hidden", true); // Hide the input again
+
+         // Display message
+         var copyTextMessage3 = document.getElementById("copyTextMessage3");
+                copyTextMessage3.textContent = " Text copied!";
+                setTimeout(function () {
+                    copyTextMessage3.textContent = "";
+                }, 2000); // Clear the message after 2 seconds
       }
 
       function getUserInputCmdPc3() {
